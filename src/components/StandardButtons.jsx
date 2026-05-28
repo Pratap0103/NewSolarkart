@@ -13,11 +13,11 @@ export const TabSwitcher = ({ activeTab, onTabChange, tabs }) => {
           onClick={() => onTabChange(tab.id)}
           className={`flex-1 py-1.5 px-4 transition text-[11px] md:text-sm rounded-md whitespace-nowrap capitalize flex items-center justify-center gap-2 ${
             activeTab === tab.id 
-              ? 'bg-indigo-50 text-indigo-700 font-bold' 
+              ? 'bg-brand-navy/10 text-brand-navy font-bold' 
               : 'text-gray-500 hover:bg-gray-50'
           }`}
         >
-          {tab.icon && <tab.icon size={14} className={activeTab === tab.id ? 'text-indigo-600' : 'text-gray-400'} />}
+          {tab.icon && <tab.icon size={14} className={activeTab === tab.id ? 'text-brand-navy' : 'text-gray-400'} />}
           {tab.label} ({tab.count || 0})
         </button>
       ))}
@@ -60,7 +60,7 @@ export const FormActionButtons = ({
         form={formId}
         onClick={onSubmit}
         disabled={loading}
-        className="flex-[1.5] bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 rounded-lg transition-all active:scale-95 shadow-md text-xs uppercase tracking-widest disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="flex-[1.5] bg-brand-navy hover:bg-brand-navy text-white font-bold py-2 rounded-lg transition-all active:scale-95 shadow-md text-xs uppercase tracking-widest disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {loading ? (
           <>

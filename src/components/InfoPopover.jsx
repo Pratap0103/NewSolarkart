@@ -60,7 +60,7 @@ const InfoPopover = ({ children, items, title }) => {
                   <div className="p-4 space-y-3">
                     {items.map((item, i) => (
                       <div key={i} className="flex items-start gap-2.5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 flex-shrink-0 shadow-sm shadow-indigo-200"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-navy/80 mt-1.5 flex-shrink-0 shadow-sm shadow-indigo-200"></div>
                         <span className="text-[11px] md:text-[13px] font-medium text-gray-700 uppercase leading-snug break-words">
                           {item}
                         </span>
@@ -73,7 +73,7 @@ const InfoPopover = ({ children, items, title }) => {
                 <div className="px-4 py-2 md:py-3 border-t border-gray-100 bg-white flex-none z-20">
                   <button
                     onClick={(e) => { e.stopPropagation(); setShow(false); }}
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 rounded-lg transition-all active:scale-[0.98] shadow-sm text-[11px] md:text-xs uppercase tracking-widest"
+                    className="w-full bg-brand-navy hover:bg-brand-navy text-white font-bold py-2 rounded-lg transition-all active:scale-[0.98] shadow-sm text-[11px] md:text-xs uppercase tracking-widest"
                   >
                     Close
                   </button>
@@ -97,7 +97,7 @@ const InfoPopover = ({ children, items, title }) => {
                 <div className="space-y-2 max-h-32 overflow-y-auto pr-1 custom-scrollbar">
                   {items.map((item, i) => (
                     <div key={i} className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 flex-shrink-0 shadow-sm shadow-indigo-200"></div>
+                      <div className="w-1.5 h-1.5 rounded-full bg-brand-navy/80 mt-1.5 flex-shrink-0 shadow-sm shadow-indigo-200"></div>
                       <span className="text-[11px] font-medium text-gray-700 uppercase leading-snug break-words">
                         {item}
                       </span>

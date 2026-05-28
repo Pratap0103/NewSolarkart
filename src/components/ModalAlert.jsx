@@ -24,21 +24,21 @@ const ModalAlert = ({
 
   const config = {
     success: {
-      icon: <CheckCircle2 className="text-emerald-500" size={52} />,
-      btnColor: 'bg-emerald-600 hover:bg-emerald-700',
-      iconBg: 'bg-emerald-50',
+      icon: <CheckCircle2 className="text-brand-orange/80" size={52} />,
+      btnColor: 'bg-brand-orange hover:bg-brand-orange',
+      iconBg: 'bg-brand-orange/10',
       shadow: 'shadow-emerald-200/50'
     },
     error: {
-      icon: <AlertCircle className="text-rose-500" size={52} />,
-      btnColor: 'bg-rose-600 hover:bg-rose-700',
-      iconBg: 'bg-rose-50',
+      icon: <AlertCircle className="text-brand-navy/80" size={52} />,
+      btnColor: 'bg-brand-navy hover:bg-brand-navy',
+      iconBg: 'bg-brand-navy/10',
       shadow: 'shadow-rose-200/50'
     },
     confirm: {
-      icon: <HelpCircle className="text-indigo-500" size={52} />,
-      btnColor: 'bg-indigo-600 hover:bg-indigo-700',
-      iconBg: 'bg-indigo-50',
+      icon: <HelpCircle className="text-brand-navy/80" size={52} />,
+      btnColor: 'bg-brand-navy hover:bg-brand-navy',
+      iconBg: 'bg-brand-navy/10',
       shadow: 'shadow-indigo-200/50'
     }
   }[type] || {};

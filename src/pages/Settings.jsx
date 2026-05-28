@@ -119,7 +119,7 @@ export default function Settings() {
     
     if (isEditing) {
       return (
-        <tr key={user.id} className="bg-indigo-50/40 border-b border-gray-100 transition-colors">
+        <tr key={user.id} className="bg-brand-navy/40 border-b border-gray-100 transition-colors">
           <td className="px-4 py-2.5 text-center text-xs text-gray-700 whitespace-nowrap">{globalIdx}</td>
           <td className="px-4 py-2.5 whitespace-nowrap">
             <div className="relative">
@@ -128,7 +128,7 @@ export default function Settings() {
                 type="text"
                 value={editingUser.name}
                 onChange={(e) => setEditingUser({ ...editingUser, name: e.target.value })}
-                className="w-full pl-8 pr-3 py-1.5 border border-indigo-200 rounded focus:outline-none focus:ring-1 focus:ring-indigo-500 text-xs h-[30px] bg-white text-gray-800"
+                className="w-full pl-8 pr-3 py-1.5 border border-brand-navy/30 rounded focus:outline-none focus:ring-1 focus:ring-brand-navy/80 text-xs h-[30px] bg-white text-gray-800"
               />
             </div>
           </td>
@@ -144,7 +144,7 @@ export default function Settings() {
                 type="text"
                 value={editingUser.password}
                 onChange={(e) => setEditingUser({ ...editingUser, password: e.target.value })}
-                className="w-full pl-8 pr-3 py-1.5 border border-indigo-200 rounded focus:outline-none focus:ring-1 focus:ring-indigo-500 text-xs h-[30px] bg-white text-gray-800"
+                className="w-full pl-8 pr-3 py-1.5 border border-brand-navy/30 rounded focus:outline-none focus:ring-1 focus:ring-brand-navy/80 text-xs h-[30px] bg-white text-gray-800"
               />
             </div>
           </td>
@@ -154,7 +154,7 @@ export default function Settings() {
               <select
                 value={editingUser.role}
                 onChange={(e) => setEditingUser({ ...editingUser, role: e.target.value })}
-                className="w-full pl-8 pr-2 py-1.5 border border-indigo-200 rounded focus:outline-none focus:ring-1 focus:ring-indigo-500 text-xs h-[30px] bg-white text-indigo-700 font-bold appearance-none"
+                className="w-full pl-8 pr-2 py-1.5 border border-brand-navy/30 rounded focus:outline-none focus:ring-1 focus:ring-brand-navy/80 text-xs h-[30px] bg-white text-brand-navy font-bold appearance-none"
               >
                 <option value="USER">USER</option>
                 <option value="ADMIN">ADMIN</option>
@@ -165,7 +165,7 @@ export default function Settings() {
             <div className="flex gap-2 justify-center">
               <button
                 onClick={handleSaveUser}
-                className="flex items-center gap-1 bg-green-50 text-green-700 border border-green-200 hover:bg-green-100 transition px-2 py-1 rounded text-[11px] font-bold"
+                className="flex items-center gap-1 bg-brand-orange/10 text-brand-orange border border-brand-orange/30 hover:bg-brand-orange/10 transition px-2 py-1 rounded text-[11px] font-bold"
               >
                 <Check size={12} /> Save
               </button>
@@ -182,14 +182,14 @@ export default function Settings() {
     }
 
     return (
-      <tr key={user.id} className="hover:bg-indigo-50/30 transition-colors border-b border-gray-100">
+      <tr key={user.id} className="hover:bg-brand-navy/30 transition-colors border-b border-gray-100">
         <td className="px-4 py-3 text-center text-xs text-gray-600 whitespace-nowrap">{globalIdx}</td>
         <td className="px-4 py-3 text-left text-xs font-semibold text-gray-900 whitespace-nowrap">{user.name}</td>
-        <td className="px-4 py-3 text-center text-xs text-indigo-600 font-mono whitespace-nowrap">{user.id}</td>
+        <td className="px-4 py-3 text-center text-xs text-brand-navy font-mono whitespace-nowrap">{user.id}</td>
         <td className="px-4 py-3 text-center text-xs text-gray-400 whitespace-nowrap">••••••••</td>
         <td className="px-4 py-3 text-center whitespace-nowrap">
           <span className={`px-2.5 py-0.5 rounded text-[10px] uppercase font-black ${
-            user.role === 'ADMIN' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'
+            user.role === 'ADMIN' ? 'bg-brand-navy/10 text-brand-navy' : 'bg-brand-navy/10 text-brand-navy'
           }`}>
             {user.role}
           </span>
@@ -198,7 +198,7 @@ export default function Settings() {
           <div className="flex gap-2 justify-center">
             <button
               onClick={() => handleEditUser(user)}
-              className="flex items-center gap-1 text-indigo-600 hover:text-indigo-800 transition text-[11px] font-bold"
+              className="flex items-center gap-1 text-brand-navy hover:text-brand-navy transition text-[11px] font-bold"
             >
               <Edit2 size={12} /> Edit
             </button>
@@ -220,9 +220,9 @@ export default function Settings() {
 
     if (isEditing) {
       return (
-        <div key={user.id} className="bg-indigo-50/20 rounded-xl border border-indigo-200 p-4 space-y-3 shadow-md">
-          <div className="flex justify-between items-center border-b border-indigo-100 pb-2">
-            <span className="text-[10px] text-indigo-500 uppercase tracking-widest font-bold">Edit User #{globalIdx}</span>
+        <div key={user.id} className="bg-brand-navy/20 rounded-xl border border-brand-navy/30 p-4 space-y-3 shadow-md">
+          <div className="flex justify-between items-center border-b border-brand-navy/10 pb-2">
+            <span className="text-[10px] text-brand-navy/80 uppercase tracking-widest font-bold">Edit User #{globalIdx}</span>
             <span className="bg-gray-100 text-gray-500 text-[10px] px-2 py-0.5 rounded border border-gray-200 font-mono">
               ID: {editingUser.id}
             </span>
@@ -237,7 +237,7 @@ export default function Settings() {
                   type="text"
                   value={editingUser.name}
                   onChange={(e) => setEditingUser({ ...editingUser, name: e.target.value })}
-                  className="w-full pl-8 pr-3 py-1.5 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-xs h-[34px] bg-white text-gray-800"
+                  className="w-full pl-8 pr-3 py-1.5 border border-brand-navy/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-navy/20 text-xs h-[34px] bg-white text-gray-800"
                 />
               </div>
             </div>
@@ -250,7 +250,7 @@ export default function Settings() {
                   type="text"
                   value={editingUser.password}
                   onChange={(e) => setEditingUser({ ...editingUser, password: e.target.value })}
-                  className="w-full pl-8 pr-3 py-1.5 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-xs h-[34px] bg-white text-gray-800"
+                  className="w-full pl-8 pr-3 py-1.5 border border-brand-navy/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-navy/20 text-xs h-[34px] bg-white text-gray-800"
                 />
               </div>
             </div>
@@ -262,7 +262,7 @@ export default function Settings() {
                 <select
                   value={editingUser.role}
                   onChange={(e) => setEditingUser({ ...editingUser, role: e.target.value })}
-                  className="w-full pl-8 pr-2 py-1.5 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-xs h-[34px] bg-white text-indigo-700 font-bold"
+                  className="w-full pl-8 pr-2 py-1.5 border border-brand-navy/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-navy/20 text-xs h-[34px] bg-white text-brand-navy font-bold"
                 >
                   <option value="USER">USER</option>
                   <option value="ADMIN">ADMIN</option>
@@ -273,7 +273,7 @@ export default function Settings() {
             <div className="flex gap-2 pt-2">
               <button
                 onClick={handleSaveUser}
-                className="flex-1 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold flex items-center justify-center gap-1 shadow"
+                className="flex-1 py-2 bg-brand-navy hover:bg-brand-navy text-white rounded-lg text-xs font-bold flex items-center justify-center gap-1 shadow"
               >
                 <Check size={14} /> Save
               </button>
@@ -290,7 +290,7 @@ export default function Settings() {
     }
 
     return (
-      <div key={user.id} className="bg-white rounded-xl border border-indigo-50 shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-indigo-100">
+      <div key={user.id} className="bg-white rounded-xl border border-brand-navy/10 shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-brand-navy/10">
         <div className="flex justify-between items-center pb-2 border-b border-slate-50">
           <div className="flex items-center gap-2">
             <span className="w-5 h-5 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[10px] font-black text-slate-500">
@@ -299,7 +299,7 @@ export default function Settings() {
             <span className="text-xs font-bold text-gray-900 truncate max-w-[130px]">{user.name}</span>
           </div>
           <span className={`px-2.5 py-0.5 rounded text-[8px] font-black uppercase ${
-            user.role === 'ADMIN' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'
+            user.role === 'ADMIN' ? 'bg-brand-navy/10 text-brand-navy' : 'bg-brand-navy/10 text-brand-navy'
           }`}>
             {user.role}
           </span>
@@ -308,7 +308,7 @@ export default function Settings() {
         <div className="grid grid-cols-2 gap-2 text-[11px] bg-slate-50 rounded-lg p-2 border border-slate-100/50">
           <div>
             <span className="text-gray-400 block uppercase text-[8px] tracking-tight">User ID</span>
-            <span className="text-indigo-600 font-mono font-semibold">{user.id}</span>
+            <span className="text-brand-navy font-mono font-semibold">{user.id}</span>
           </div>
           <div>
             <span className="text-gray-400 block uppercase text-[8px] tracking-tight">Password</span>
@@ -319,7 +319,7 @@ export default function Settings() {
         <div className="flex gap-2 pt-1.5">
           <button
             onClick={() => handleEditUser(user)}
-            className="flex-1 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 hover:text-indigo-800 rounded-lg text-[10px] font-bold uppercase tracking-wider flex items-center justify-center gap-1 border border-indigo-100"
+            className="flex-1 py-2 bg-brand-navy/10 hover:bg-brand-navy/10 text-brand-navy hover:text-brand-navy rounded-lg text-[10px] font-bold uppercase tracking-wider flex items-center justify-center gap-1 border border-brand-navy/10"
           >
             <Edit2 size={12} /> Edit
           </button>
@@ -348,12 +348,12 @@ export default function Settings() {
                 placeholder="Search users..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white border border-gray-300 rounded-lg lg:rounded pl-8 pr-2 py-1.5 focus:outline-none focus:border-indigo-500 text-xs md:text-sm h-[32px] md:h-[38px]"
+                className="w-full bg-white border border-gray-300 rounded-lg lg:rounded pl-8 pr-2 py-1.5 focus:outline-none focus:border-brand-navy/80 text-xs md:text-sm h-[32px] md:h-[38px]"
               />
             </div>
             <button
               onClick={() => setShowAddUserModal(true)}
-              className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg flex items-center justify-center lg:hidden h-[32px] w-[32px] flex-shrink-0 shadow-sm transition"
+              className="bg-brand-navy hover:bg-brand-navy text-white rounded-lg flex items-center justify-center lg:hidden h-[32px] w-[32px] flex-shrink-0 shadow-sm transition"
               title="Add New User"
             >
               <Plus size={16} />
@@ -372,7 +372,7 @@ export default function Settings() {
 
         <button
           onClick={() => setShowAddUserModal(true)}
-          className="hidden lg:flex bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg items-center justify-center transition shadow-sm w-[38px] h-[38px] flex-shrink-0"
+          className="hidden lg:flex bg-brand-navy hover:bg-brand-navy text-white rounded-lg items-center justify-center transition shadow-sm w-[38px] h-[38px] flex-shrink-0"
           title="Add New User"
         >
           <Plus size={18} />
@@ -415,7 +415,7 @@ export default function Settings() {
                 value={newUser.name}
                 onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
                 placeholder="Enter full name"
-                className="w-full pl-8 pr-3 py-1.5 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-indigo-500 text-xs h-[32px] md:h-[36px]"
+                className="w-full pl-8 pr-3 py-1.5 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-brand-navy/80 text-xs h-[32px] md:h-[36px]"
                 required
               />
             </div>
@@ -430,7 +430,7 @@ export default function Settings() {
                 value={newUser.id}
                 onChange={(e) => setNewUser({ ...newUser, id: e.target.value })}
                 placeholder="Enter unique user ID (e.g. jsmith)"
-                className="w-full pl-8 pr-3 py-1.5 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-indigo-500 text-xs h-[32px] md:h-[36px]"
+                className="w-full pl-8 pr-3 py-1.5 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-brand-navy/80 text-xs h-[32px] md:h-[36px]"
                 required
               />
             </div>
@@ -445,7 +445,7 @@ export default function Settings() {
                 value={newUser.password}
                 onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
                 placeholder="Enter login password"
-                className="w-full pl-8 pr-3 py-1.5 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-indigo-500 text-xs h-[32px] md:h-[36px]"
+                className="w-full pl-8 pr-3 py-1.5 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-brand-navy/80 text-xs h-[32px] md:h-[36px]"
                 required
               />
             </div>
@@ -458,7 +458,7 @@ export default function Settings() {
               <select
                 value={newUser.role}
                 onChange={(e) => setNewUser({ ...newUser, role: e.target.value })}
-                className="w-full pl-8 pr-2 py-1.5 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-indigo-500 text-xs h-[32px] md:h-[36px]"
+                className="w-full pl-8 pr-2 py-1.5 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-brand-navy/80 text-xs h-[32px] md:h-[36px]"
               >
                 <option value="USER">USER</option>
                 <option value="ADMIN">ADMIN</option>

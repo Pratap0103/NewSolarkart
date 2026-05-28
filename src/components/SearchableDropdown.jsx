@@ -75,14 +75,14 @@ const SearchableDropdown = ({
       <button
         type="button"
         onClick={handleToggle}
-        className={`w-full bg-white border border-gray-300 ${rounded} px-2 py-1 flex justify-between items-center cursor-pointer hover:border-indigo-500 transition-all ${height} shadow-sm group outline-none focus:ring-1 focus:ring-indigo-500/30 active:scale-[0.98]`}
+        className={`w-full bg-white border border-gray-300 ${rounded} px-2 py-1 flex justify-between items-center cursor-pointer hover:border-brand-navy/80 transition-all ${height} shadow-sm group outline-none focus:ring-1 focus:ring-brand-navy/30 active:scale-[0.98]`}
       >
         <span className={`text-[11px] md:text-[13px] truncate ${selectedOption ? 'text-gray-900' : 'text-gray-400'}`}>
           {selectedOption ? selectedOption.label : placeholder}
         </span>
         <ChevronDown
           size={14}
-          className={`text-gray-400 transition-transform duration-200 group-hover:text-indigo-500 ${isOpen ? 'rotate-180' : ''}`}
+          className={`text-gray-400 transition-transform duration-200 group-hover:text-brand-navy/80 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
 
@@ -100,7 +100,7 @@ const SearchableDropdown = ({
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onClick={(e) => e.stopPropagation()}
-                className="w-full bg-white border border-gray-200 rounded pl-7 pr-2 py-1 text-[11px] md:text-[13px] focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20 shadow-inner"
+                className="w-full bg-white border border-gray-200 rounded pl-7 pr-2 py-1 text-[11px] md:text-[13px] focus:outline-none focus:border-brand-navy/80 focus:ring-1 focus:ring-brand-navy/20 shadow-inner"
               />
             </div>
           </div>
@@ -117,14 +117,14 @@ const SearchableDropdown = ({
                     setIsOpen(false);
                     setSearchTerm("");
                   }}
-                  className={`px-3 py-1.5 text-[11px] md:text-[13px] cursor-pointer flex justify-between items-center hover:bg-indigo-50 transition-colors group ${value === opt.value
-                      ? 'bg-indigo-50/50 text-indigo-700'
+                  className={`px-3 py-1.5 text-[11px] md:text-[13px] cursor-pointer flex justify-between items-center hover:bg-brand-navy/10 transition-colors group ${value === opt.value
+                      ? 'bg-brand-navy/50 text-brand-navy'
                       : 'text-gray-700'
                     }`}
                 >
                   <span className="truncate">{opt.label}</span>
                   {value === opt.value && (
-                    <Check size={12} className="text-indigo-600 flex-shrink-0" />
+                    <Check size={12} className="text-brand-navy flex-shrink-0" />
                   )}
                 </div>
               ))
@@ -151,7 +151,7 @@ const SearchableDropdown = ({
                 onAdd();
                 setIsOpen(false);
               }}
-              className="w-full border-t border-gray-100 px-3 py-2 text-indigo-600 hover:bg-indigo-50 transition-all flex items-center justify-center gap-2 bg-white active:bg-indigo-100"
+              className="w-full border-t border-gray-100 px-3 py-2 text-brand-navy hover:bg-brand-navy/10 transition-all flex items-center justify-center gap-2 bg-white active:bg-brand-navy/10"
             >
               <Plus size={14} strokeWidth={3} />
               <span className="text-[10px] font-black uppercase tracking-widest">Add New</span>

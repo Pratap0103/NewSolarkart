@@ -33,7 +33,7 @@ export default function LivePowerUsage() {
         <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col h-full">
           <div className="mb-8">
             <h3 className="text-[10px] font-black text-slate-900 flex items-center gap-2 mb-1">
-              <Cpu size={16} className="text-blue-500" /> Live Energy Distribution Flow
+              <Cpu size={16} className="text-brand-navy/80" /> Live Energy Distribution Flow
             </h3>
             <p className="text-[10px] font-medium text-slate-500 hidden sm:block">Visualizing dynamic energy transfers between system nodes.</p>
           </div>
@@ -41,40 +41,40 @@ export default function LivePowerUsage() {
           <div className="relative flex-1 min-h-[220px] flex items-center justify-center">
             
             {/* Center Node */}
-            <div className="absolute z-10 w-14 h-14 bg-blue-50 border-2 border-blue-200 rounded-full flex items-center justify-center shadow-lg shadow-blue-100">
-              <Zap size={24} className="text-blue-500" />
+            <div className="absolute z-10 w-14 h-14 bg-brand-navy/10 border-2 border-brand-navy/30 rounded-full flex items-center justify-center shadow-lg shadow-blue-100">
+              <Zap size={24} className="text-brand-navy/80" />
             </div>
 
             {/* Left Node (Solar) */}
             <div className="absolute left-0 sm:left-4 z-10 flex flex-col items-center gap-2">
-              <div className="w-12 h-12 bg-amber-50 border-2 border-amber-200 rounded-full flex items-center justify-center">
-                <Sun size={20} className="text-amber-500" />
+              <div className="w-12 h-12 bg-brand-orange/10 border-2 border-brand-orange/30 rounded-full flex items-center justify-center">
+                <Sun size={20} className="text-brand-orange/80" />
               </div>
-              <span className="text-[9px] font-black text-amber-600 tracking-wide">Solar: 3.8 kW</span>
+              <span className="text-[9px] font-black text-brand-orange tracking-wide">Solar: 3.8 kW</span>
             </div>
 
             {/* Right Node (Home) */}
             <div className="absolute right-0 sm:right-4 z-10 flex flex-col items-center gap-2">
-              <div className="w-12 h-12 bg-emerald-50 border-2 border-emerald-200 rounded-full flex items-center justify-center">
-                <Home size={20} className="text-emerald-600" />
+              <div className="w-12 h-12 bg-brand-orange/10 border-2 border-brand-orange/30 rounded-full flex items-center justify-center">
+                <Home size={20} className="text-brand-orange" />
               </div>
-              <span className="text-[9px] font-black text-emerald-700 tracking-wide">Home: 2.1 kW</span>
+              <span className="text-[9px] font-black text-brand-orange tracking-wide">Home: 2.1 kW</span>
             </div>
 
             {/* Top Node (Export) */}
             <div className="absolute top-0 z-10 flex flex-col items-center gap-2">
-              <div className="w-10 h-10 bg-blue-50 border-2 border-blue-200 rounded-full flex items-center justify-center">
-                <ArrowRightLeft size={16} className="text-blue-600" />
+              <div className="w-10 h-10 bg-brand-navy/10 border-2 border-brand-navy/30 rounded-full flex items-center justify-center">
+                <ArrowRightLeft size={16} className="text-brand-navy" />
               </div>
-              <span className="text-[9px] font-black text-blue-700 tracking-wide">Export: 0.5 kW</span>
+              <span className="text-[9px] font-black text-brand-navy tracking-wide">Export: 0.5 kW</span>
             </div>
 
             {/* Bottom Node (Battery) */}
             <div className="absolute bottom-0 z-10 flex flex-col items-center gap-2">
-              <div className="w-10 h-10 bg-teal-50 border-2 border-teal-200 rounded-full flex items-center justify-center">
-                <BatteryMedium size={16} className="text-teal-600" />
+              <div className="w-10 h-10 bg-brand-navy/10 border-2 border-brand-navy/30 rounded-full flex items-center justify-center">
+                <BatteryMedium size={16} className="text-brand-navy" />
               </div>
-              <span className="text-[9px] font-black text-teal-800 tracking-wide">Battery (82%)</span>
+              <span className="text-[9px] font-black text-brand-navy tracking-wide">Battery (82%)</span>
             </div>
 
             {/* SVG Lines */}
@@ -88,16 +88,16 @@ export default function LivePowerUsage() {
 
           <div className="flex flex-wrap justify-center gap-4 mt-6">
             <div className="flex items-center gap-1.5 text-[9px] font-bold text-slate-500 uppercase">
-              <span className="w-2 h-2 rounded-full bg-amber-500"></span> Solar Input
+              <span className="w-2 h-2 rounded-full bg-brand-orange/80"></span> Solar Input
             </div>
             <div className="flex items-center gap-1.5 text-[9px] font-bold text-slate-500 uppercase">
-              <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Appliance Load
+              <span className="w-2 h-2 rounded-full bg-brand-orange/80"></span> Appliance Load
             </div>
             <div className="flex items-center gap-1.5 text-[9px] font-bold text-slate-500 uppercase">
-              <span className="w-2 h-2 rounded-full bg-teal-500"></span> Battery Flow
+              <span className="w-2 h-2 rounded-full bg-brand-navy/80"></span> Battery Flow
             </div>
             <div className="flex items-center gap-1.5 text-[9px] font-bold text-slate-500 uppercase">
-              <span className="w-2 h-2 rounded-full bg-blue-500"></span> Grid Interaction
+              <span className="w-2 h-2 rounded-full bg-brand-navy/80"></span> Grid Interaction
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@ export default function LivePowerUsage() {
         <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col h-full">
           <div className="mb-4">
             <h3 className="text-[10px] font-black text-slate-900 flex items-center gap-2 mb-1">
-              <BatteryCharging size={16} className="text-blue-600" /> Battery Storage Diagnostics
+              <BatteryCharging size={16} className="text-brand-navy" /> Battery Storage Diagnostics
             </h3>
             <p className="text-[10px] font-medium text-slate-500 hidden sm:block">Monitoring backup reserve, charge/discharge rates, and SOH.</p>
           </div>
@@ -127,7 +127,7 @@ export default function LivePowerUsage() {
           <div className="grid grid-cols-2 gap-y-4 gap-x-2 mt-4 pt-4 border-t border-slate-100">
             <div className="flex justify-between items-center pr-4">
               <span className="text-[10px] font-medium text-slate-500">Power Transfer:</span>
-              <span className="text-[10px] font-black text-blue-600">+1.20 kW</span>
+              <span className="text-[10px] font-black text-brand-navy">+1.20 kW</span>
             </div>
             <div className="flex justify-between items-center pl-4 border-l border-slate-100">
               <span className="text-[10px] font-medium text-slate-500">Battery Temp:</span>
@@ -135,7 +135,7 @@ export default function LivePowerUsage() {
             </div>
             <div className="flex justify-between items-center pr-4">
               <span className="text-[10px] font-medium text-slate-500">Battery Health:</span>
-              <span className="text-[10px] font-black text-emerald-600">98.2% (SOH)</span>
+              <span className="text-[10px] font-black text-brand-orange">98.2% (SOH)</span>
             </div>
             <div className="flex justify-between items-center pl-4 border-l border-slate-100">
               <span className="text-[10px] font-medium text-slate-500">Voltage / Cell:</span>

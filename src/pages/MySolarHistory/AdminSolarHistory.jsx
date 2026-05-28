@@ -19,7 +19,8 @@ import {
   RefreshCw,
   Info,
   Search,
-  RotateCcw
+  RotateCcw,
+  Users
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import CandleBarChart from '../../components/CandleBarChart';
@@ -30,8 +31,19 @@ const formatDateString = (date) => {
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 };
 
-export default function MySolarHistory() {
+export default function AdminSolarHistory() {
   // 1. Core State
+  const [selectedCustomer, setSelectedCustomer] = useState('ALL');
+  
+  const customersList = [
+    { id: 'ALL', name: 'Global Fleet Average' },
+    { id: 'CUST-001', name: 'Rajesh Kumar (Pune)' },
+    { id: 'CUST-002', name: 'Priya Sharma (Mumbai)' },
+    { id: 'CUST-003', name: 'Amit Patel (Ahmedabad)' },
+    { id: 'CUST-004', name: 'Sneha Gupta (Delhi)' },
+    { id: 'CUST-005', name: 'Vikram Singh (Jaipur)' }
+  ];
+
   const [activeView, setActiveView] = useState('Day'); // 'Day' | 'Week' | 'Month' | 'Year' | 'Lifetime'
   const [selectedDate, setSelectedDate] = useState(new Date('2026-05-26'));
   const [selectedYear, setSelectedYear] = useState(2026);
@@ -142,7 +154,11 @@ export default function MySolarHistory() {
   // 3. Dynamic Mock Data Generator
   // Generates data on the fly to support dates, weather anomalies, and correct values.
   const chartData = useMemo(() => {
-    const seed = (selectedDate.getDate() + selectedMonth + selectedYear + (activeView.charCodeAt(0) || 0)) % 100;
+    const custSeed = selectedCustomer === 'ALL' ? 0 : selectedCustomer.charCodeAt(selectedCustomer.length - 1) * 3;
+    const seed = ((selectedDate.getDate() + selectedMonth + selectedYear + (activeView.charCodeAt(0) || 0) + custSeed) % 100);
+
+    // Multiplier to simulate fleet scale when 'ALL' is selected
+    const scale = selectedCustomer === 'ALL' ? 12.5 : 1.0;
 
     const weatherOptions = ['Sunny', 'Partly Cloudy', 'Cloudy', 'Rainy'];
     const statusOptions = ['Optimal', 'Active', 'Low Yield', 'Standby'];
@@ -176,7 +192,7 @@ export default function MySolarHistory() {
         // Solar window is primarily 06:00 to 18:00
         if (hour >= 6 && hour <= 18) {
           const intensity = Math.sin(((hour - 6) / 12) * Math.PI); // peak around 12:00
-          const basePower = intensity * 6.5; // Up to 6.5 kW peak
+          const basePower = intensity * 6.5 * scale; // Up to 6.5 kW peak
           const weatherModifier = 0.5 + (Math.sin(seed + hour) * 0.3); // fluctuates with seed
 
           power = Math.max(0.1, basePower * weatherModifier);
@@ -222,13 +238,13 @@ export default function MySolarHistory() {
         const maxDailyPower = 7.5;
         const weatherRatio = weather === 'Sunny' ? 0.95 : weather === 'Partly Cloudy' ? 0.8 : weather === 'Cloudy' ? 0.5 : 0.25;
 
-        const generation = (25 + Math.sin(wSeed) * 12) * weatherRatio;
-        const power = (4.5 + Math.cos(wSeed) * 1.5) * weatherRatio;
-        const low = Math.max(0.2, power - 2);
-        const high = power + 2.5;
-        const open = power - 0.5;
-        const close = power + 0.6;
-        const status = getStatusData(generation, 40);
+        const generation = (25 + Math.sin(wSeed) * 12) * weatherRatio * scale;
+        const power = (4.5 + Math.cos(wSeed) * 1.5) * weatherRatio * scale;
+        const low = Math.max(0.2, power - (2 * scale));
+        const high = power + (2.5 * scale);
+        const open = power - (0.5 * scale);
+        const close = power + (0.6 * scale);
+        const status = getStatusData(generation, 40 * scale);
 
         return {
           time: day,
@@ -252,13 +268,13 @@ export default function MySolarHistory() {
         const weather = getWeatherData(wSeed);
         const weatherRatio = weather === 'Sunny' ? 0.95 : weather === 'Partly Cloudy' ? 0.75 : weather === 'Cloudy' ? 0.45 : 0.2;
 
-        const generation = (28 + Math.cos(wSeed) * 10) * weatherRatio;
-        const power = (4.8 + Math.sin(wSeed) * 1.2) * weatherRatio;
-        const low = Math.max(0.1, power - 1.8);
-        const high = power + 2.2;
-        const open = power - 0.4;
-        const close = power + 0.5;
-        const status = getStatusData(generation, 40);
+        const generation = (28 + Math.cos(wSeed) * 10) * weatherRatio * scale;
+        const power = (4.8 + Math.sin(wSeed) * 1.2) * weatherRatio * scale;
+        const low = Math.max(0.1, power - (1.8 * scale));
+        const high = power + (2.2 * scale);
+        const open = power - (0.4 * scale);
+        const close = power + (0.5 * scale);
+        const status = getStatusData(generation, 40 * scale);
 
         list.push({
           time: `${day} ${monthsList[selectedMonth].substring(0, 3)}`,
@@ -282,13 +298,13 @@ export default function MySolarHistory() {
         const seasonModifier = Math.sin((idx / 11) * Math.PI) * 0.5 + 0.5; // bell curve
         const weather = getWeatherData(wSeed);
 
-        const generation = (850 + Math.sin(wSeed) * 150) * (0.6 + seasonModifier * 0.4);
-        const power = (5.2 + Math.cos(wSeed) * 0.8) * (0.7 + seasonModifier * 0.3);
-        const low = Math.max(0.5, power - 1.5);
-        const high = power + 1.8;
-        const open = power - 0.3;
-        const close = power + 0.4;
-        const status = getStatusData(generation / 30, 35);
+        const generation = (850 + Math.sin(wSeed) * 150) * (0.6 + seasonModifier * 0.4) * scale;
+        const power = (5.2 + Math.cos(wSeed) * 0.8) * (0.7 + seasonModifier * 0.3) * scale;
+        const low = Math.max(0.5, power - (1.5 * scale));
+        const high = power + (1.8 * scale);
+        const open = power - (0.3 * scale);
+        const close = power + (0.4 * scale);
+        const status = getStatusData(generation / 30, 35 * scale);
 
         return {
           time: month.substring(0, 3),
@@ -309,12 +325,12 @@ export default function MySolarHistory() {
         const wSeed = seed + idx;
         const weather = 'Sunny'; // Overall aggregated weather average
 
-        const generation = 10500 + Math.sin(wSeed) * 800 - (idx * 50); // slight panel degradation over years
-        const power = 5.4 + Math.cos(wSeed) * 0.3;
-        const low = 4.2;
-        const high = 6.8;
-        const open = power - 0.2;
-        const close = power + 0.2;
+        const generation = (10500 + Math.sin(wSeed) * 800 - (idx * 50)) * scale; // slight panel degradation over years
+        const power = (5.4 + Math.cos(wSeed) * 0.3) * scale;
+        const low = 4.2 * scale;
+        const high = 6.8 * scale;
+        const open = power - (0.2 * scale);
+        const close = power + (0.2 * scale);
         const status = 'Optimal';
 
         return {
@@ -330,7 +346,7 @@ export default function MySolarHistory() {
         };
       });
     }
-  }, [activeView, selectedDate, selectedYear, selectedMonth, selectedWeekStart]);
+  }, [activeView, selectedDate, selectedYear, selectedMonth, selectedWeekStart, selectedCustomer]);
 
   // 4. Calculate System Performance Indicators
   const metrics = useMemo(() => {
@@ -495,8 +511,19 @@ export default function MySolarHistory() {
       {/* 1. Header Toolbar */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-1">
 
-        {/* View Selection Buttons */}
-        <div className="flex flex-wrap gap-1.5">
+        {/* View Selection & Customer Filter */}
+        <div className="flex flex-wrap gap-1.5 items-center">
+          <div className="flex items-center gap-2 mr-2 bg-brand-navy/5 p-1 rounded-lg border border-brand-navy/10">
+            <Users size={14} className="text-brand-navy ml-1 hidden sm:block" />
+            <select 
+              value={selectedCustomer}
+              onChange={(e) => setSelectedCustomer(e.target.value)}
+              className="bg-transparent border-none text-brand-navy font-black text-[10px] sm:text-[11px] focus:ring-0 cursor-pointer pl-0 pr-6"
+            >
+              {customersList.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+            </select>
+          </div>
+          
           {['Day', 'Week', 'Month', 'Year', 'Lifetime'].map((view) => (
             <button
               key={view}

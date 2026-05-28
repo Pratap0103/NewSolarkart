@@ -67,15 +67,15 @@ export default function AISolarAssistant() {
       <div className="flex flex-col h-full bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
         
         {/* Chat header */}
-        <div className="bg-indigo-900 text-white p-3 md:p-4 flex justify-between items-center shrink-0">
+        <div className="bg-brand-navy text-white p-3 md:p-4 flex justify-between items-center shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-indigo-800 flex items-center justify-center border border-indigo-700 shadow-inner">
-              <Cpu size={20} className="text-indigo-300" />
+            <div className="w-10 h-10 rounded-full bg-brand-navy flex items-center justify-center border border-brand-navy shadow-inner">
+              <Cpu size={20} className="text-brand-navy/30" />
             </div>
             <div>
               <h4 className="text-sm md:text-base font-bold m-0">SolarKart AI Assistant</h4>
-              <span className="text-[10px] md:text-xs text-indigo-300 flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-green-400"></span> Active Response Agent
+              <span className="text-[10px] md:text-xs text-brand-navy/30 flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-brand-orange/80"></span> Active Response Agent
               </span>
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function AISolarAssistant() {
               <div 
                 className={`p-3 md:p-4 text-sm shadow-sm ${
                   msg.sender === 'user' 
-                    ? 'bg-indigo-600 text-white rounded-2xl rounded-tr-sm' 
+                    ? 'bg-brand-navy text-white rounded-2xl rounded-tr-sm' 
                     : 'bg-white text-gray-800 border border-gray-200 rounded-2xl rounded-tl-sm'
                 }`}
               >
@@ -120,7 +120,7 @@ export default function AISolarAssistant() {
             <button
               key={idx}
               onClick={() => handleSuggestClick(q)}
-              className="px-4 py-2 bg-indigo-50 border border-indigo-100 hover:bg-indigo-100 hover:border-indigo-200 transition-colors rounded-full text-xs font-bold text-indigo-700 whitespace-nowrap shrink-0"
+              className="px-4 py-2 bg-brand-navy/10 border border-brand-navy/10 hover:bg-brand-navy/10 hover:border-brand-navy/30 transition-colors rounded-full text-xs font-bold text-brand-navy whitespace-nowrap shrink-0"
             >
               {q}
             </button>
@@ -142,13 +142,13 @@ export default function AISolarAssistant() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder={chatLang === 'EN' ? 'Ask AI about solar systems...' : 'सौर प्रणालियों के बारे में पूछें...'}
-            className="flex-1 h-10 md:h-12 rounded-full border border-gray-300 bg-gray-50 px-4 md:px-6 text-sm outline-none focus:border-indigo-500 focus:bg-white transition-all shadow-inner"
+            className="flex-1 h-10 md:h-12 rounded-full border border-gray-300 bg-gray-50 px-4 md:px-6 text-sm outline-none focus:border-brand-navy/80 focus:bg-white transition-all shadow-inner"
             onKeyDown={(e) => e.key === 'Enter' && handleSend()}
           />
 
           <button
             onClick={handleSend}
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white flex items-center justify-center transition-all active:scale-95 shadow-md shadow-indigo-200 shrink-0"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-navy hover:bg-brand-navy text-white flex items-center justify-center transition-all active:scale-95 shadow-md shadow-indigo-200 shrink-0"
             title="Send"
           >
             <Send size={18} className="ml-1" />
@@ -156,14 +156,14 @@ export default function AISolarAssistant() {
         </div>
 
         {/* Business Whatsapp helper */}
-        <div className="bg-emerald-50 p-2 text-center text-[10px] md:text-xs text-emerald-800 flex items-center justify-center gap-2 border-t border-emerald-100 shrink-0">
+        <div className="bg-brand-orange/10 p-2 text-center text-[10px] md:text-xs text-brand-orange flex items-center justify-center gap-2 border-t border-brand-orange/10 shrink-0">
           <MessageSquare size={14} />
           <span>Need a human agent?</span>
           <a
             href="https://wa.me/919988776655"
             target="_blank"
             rel="noreferrer"
-            className="font-bold text-emerald-700 hover:text-emerald-900 hover:underline"
+            className="font-bold text-brand-orange hover:text-brand-orange hover:underline"
           >
             Contact Whatsapp Support
           </a>

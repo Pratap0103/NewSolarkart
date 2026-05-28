@@ -95,18 +95,15 @@ const Sidebar = ({ isOpen, onClose }) => {
       )}
 
       {/* Sidebar */}
-      <aside className={`fixed top-0 left-0 h-full w-64 sm:w-72 lg:w-56 2xl:w-60 bg-white border-r border-indigo-100 z-50 transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <aside className={`fixed top-0 left-0 h-full w-64 sm:w-72 lg:w-56 2xl:w-60 bg-white border-r border-brand-navy/10 z-50 transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex flex-col h-full">
           {/* Logo Section */}
-          <div className="p-4 border-b border-indigo-100 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center shadow-md">
-                <Sun size={20} className="text-white" />
-              </div>
-              <span className="text-xl font-bold text-indigo-600 tracking-tight">SolarKart</span>
+          <div className="p-4 border-b border-brand-navy/10 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <img src="/src/Assets/Logo.png" alt="SolarKart" className="h-10 w-auto object-contain" />
             </div>
-            <button onClick={onClose} className="lg:hidden p-2 hover:bg-indigo-100/50 rounded-lg">
-              <X size={20} className="text-indigo-600" />
+            <button onClick={onClose} className="lg:hidden p-2 hover:bg-brand-navy/50 rounded-lg">
+              <X size={20} className="text-brand-navy" />
             </button>
           </div>
 
@@ -118,7 +115,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                   <div className="space-y-1">
                     <button
                       onClick={item.onToggle}
-                      className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all duration-200 group hover:bg-indigo-100/50 hover:text-indigo-600 border-l-4 border-transparent`}
+                      className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all duration-200 group hover:bg-brand-navy/50 hover:text-brand-navy border-l-4 border-transparent`}
                     >
                       <div className="flex items-center gap-3">
                         <item.icon size={20} className="group-hover:scale-110 transition-transform flex-shrink-0" />
@@ -137,13 +134,13 @@ const Sidebar = ({ isOpen, onClose }) => {
                             className={({ isActive }) => `
                               flex items-center justify-between px-4 py-2.5 rounded-lg transition-all duration-200
                               ${isActive 
-                                ? 'bg-indigo-100/50 text-indigo-600' 
-                                : 'text-gray-600 hover:bg-indigo-50/50 hover:text-indigo-600'}
+                                ? 'bg-brand-navy text-white shadow-md' 
+                                : 'text-gray-600 hover:bg-brand-navy/10 hover:text-brand-navy'}
                             `}
                           >
                             <span className="text-sm leading-tight whitespace-nowrap font-black">{sub.label}</span>
                             {sub.count > 0 && (
-                              <span className="bg-indigo-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full min-w-[18px] text-center shadow-sm">
+                              <span className="bg-brand-navy text-white text-[9px] font-black px-1.5 py-0.5 rounded-full min-w-[18px] text-center shadow-sm">
                                 {sub.count}
                               </span>
                             )}
@@ -160,8 +157,8 @@ const Sidebar = ({ isOpen, onClose }) => {
                     className={({ isActive }) => `
                       flex items-center justify-between px-4 py-3 rounded-lg transition-all duration-200 group
                       ${isActive 
-                        ? 'bg-indigo-100/50 text-indigo-600 border-l-4 border-indigo-600' 
-                        : 'text-gray-700 hover:bg-indigo-50/50 hover:text-indigo-600 border-l-4 border-transparent'}
+                        ? 'bg-brand-navy text-white shadow-md' 
+                        : 'text-gray-700 hover:bg-brand-navy/10 hover:text-brand-navy'}
                     `}
                   >
                     <div className="flex items-center gap-3">
@@ -169,7 +166,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                       <span className="font-black leading-tight whitespace-nowrap">{item.label}</span>
                     </div>
                     {item.count > 0 && (
-                      <span className="bg-indigo-600 text-white text-[10px] font-black px-1.5 py-0.5 rounded-full min-w-[20px] text-center shadow-sm">
+                      <span className="bg-brand-navy text-white text-[10px] font-black px-1.5 py-0.5 rounded-full min-w-[20px] text-center shadow-sm">
                         {item.count}
                       </span>
                     )}
@@ -180,10 +177,10 @@ const Sidebar = ({ isOpen, onClose }) => {
           </nav>
 
           {/* User Profile Section */}
-          <div className="p-4 border-t border-indigo-100 bg-indigo-50/50">
+          <div className="p-4 border-t border-brand-navy/10 bg-transparent">
             <button
               onClick={handleLogout}
-              className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg bg-red-50 text-red-600 border border-red-200 hover:bg-red-500 hover:text-white transition-all font-semibold shadow-sm"
+              className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg bg-transparent text-red-600 border border-transparent hover:bg-red-50 hover:border-red-200 transition-all font-semibold"
             >
               <LogOutIcon size={18} />
               <span>Sign Out</span>

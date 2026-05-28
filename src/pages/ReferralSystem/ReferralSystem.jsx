@@ -86,24 +86,24 @@ export default function ReferralSystem() {
         
         {/* Code & Actions */}
         <div className="flex flex-col gap-4 w-full xl:w-1/3">
-          <div className="bg-gradient-to-br from-indigo-600 to-indigo-800 text-white p-5 rounded-2xl shadow-md flex flex-col items-center text-center relative overflow-hidden">
+          <div className="bg-gradient-to-br from-brand-navy to-brand-navy text-white p-5 rounded-2xl shadow-md flex flex-col items-center text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 p-4 opacity-10">
               <Award size={100} />
             </div>
-            <Award size={36} className="text-yellow-400 mb-2 z-10" />
-            <h3 className="text-sm font-semibold text-indigo-100 z-10">Your Unique Referral Code</h3>
+            <Award size={36} className="text-brand-orange/80 mb-2 z-10" />
+            <h3 className="text-sm font-semibold text-brand-navy/10 z-10">Your Unique Referral Code</h3>
             <div className="flex items-center justify-center gap-3 mt-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20 z-10 w-full max-w-xs cursor-pointer hover:bg-white/20 transition-colors" onClick={handleCopyCode}>
               <span className="text-2xl font-black tracking-widest">{referrals.referralCode}</span>
-              <Copy size={20} className="text-indigo-200" />
+              <Copy size={20} className="text-brand-navy/30" />
             </div>
-            <p className="text-xs text-indigo-200 mt-4 z-10">Share this code with neighbors & friends to earn cashback!</p>
+            <p className="text-xs text-brand-navy/30 mt-4 z-10">Share this code with neighbors & friends to earn cashback!</p>
           </div>
 
           <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col gap-3">
             <button onClick={handleWhatsAppInvite} className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1DA851] text-white py-2.5 rounded-xl text-sm font-bold shadow-sm transition-colors">
               <MessageCircle size={18} /> Send WhatsApp Invite
             </button>
-            <button onClick={handleShareLink} className="w-full flex items-center justify-center gap-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-100 py-2.5 rounded-xl text-sm font-bold transition-colors">
+            <button onClick={handleShareLink} className="w-full flex items-center justify-center gap-2 bg-brand-navy/10 hover:bg-brand-navy/10 text-brand-navy border border-brand-navy/10 py-2.5 rounded-xl text-sm font-bold transition-colors">
               <Share2 size={18} /> Share Referral Link
             </button>
           </div>
@@ -113,9 +113,9 @@ export default function ReferralSystem() {
         <div className="flex flex-col gap-4 w-full xl:w-2/3">
           <div className="grid grid-cols-3 gap-1 sm:gap-4 px-2 sm:px-0">
             <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-              <div className="absolute -right-4 -top-4 w-16 h-16 bg-indigo-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+              <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-navy/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
               <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-                <Users size={14} className="text-indigo-500 hidden sm:block" />
+                <Users size={14} className="text-brand-navy/80 hidden sm:block" />
                 <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Referrals</span>
               </div>
               <div className="z-10 mt-0.5 sm:mt-1 w-full">
@@ -124,9 +124,9 @@ export default function ReferralSystem() {
             </div>
 
             <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-              <div className="absolute -right-4 -top-4 w-16 h-16 bg-amber-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+              <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-orange/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
               <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-                <ChevronRight size={14} className="text-amber-500 hidden sm:block" />
+                <ChevronRight size={14} className="text-brand-orange/80 hidden sm:block" />
                 <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Pending</span>
               </div>
               <div className="z-10 mt-0.5 sm:mt-1 w-full">
@@ -135,37 +135,37 @@ export default function ReferralSystem() {
             </div>
 
             <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-              <div className="absolute -right-4 -top-4 w-16 h-16 bg-emerald-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+              <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-orange/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
               <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-                <CreditCard size={14} className="text-emerald-500 hidden sm:block" />
+                <CreditCard size={14} className="text-brand-orange/80 hidden sm:block" />
                 <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Earned</span>
               </div>
               <div className="z-10 mt-0.5 sm:mt-1 w-full">
-                <span className="text-[6px] sm:text-2xl font-black text-emerald-600 block tracking-tighter">{referrals.earnedRewards}</span>
+                <span className="text-[6px] sm:text-2xl font-black text-brand-orange block tracking-tighter">{referrals.earnedRewards}</span>
               </div>
             </div>
           </div>
 
           <div className="bg-white p-4 md:p-5 rounded-xl border border-gray-200 shadow-sm">
             <h3 className="text-base font-bold text-gray-900 mb-4 flex items-center gap-2 border-b border-gray-100 pb-2">
-              <PlusCircle className="text-indigo-600" /> Register New Referral Lead
+              <PlusCircle className="text-brand-navy" /> Register New Referral Lead
             </h3>
             <form onSubmit={handleFormSubmit} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 items-end">
               <div className="lg:col-span-1">
                 <label className="block text-xs font-bold text-gray-700 mb-1">Name</label>
-                <input required type="text" placeholder="Friend's Name" value={form.name} onChange={(e) => setForm({...form, name: e.target.value})} className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:border-indigo-500 focus:bg-white outline-none transition-colors" />
+                <input required type="text" placeholder="Friend's Name" value={form.name} onChange={(e) => setForm({...form, name: e.target.value})} className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:border-brand-navy/80 focus:bg-white outline-none transition-colors" />
               </div>
               <div className="lg:col-span-1">
                 <label className="block text-xs font-bold text-gray-700 mb-1">Mobile</label>
-                <input required type="tel" maxLength={10} placeholder="10-digit mobile" value={form.mobile} onChange={(e) => setForm({...form, mobile: e.target.value})} className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:border-indigo-500 focus:bg-white outline-none transition-colors" />
+                <input required type="tel" maxLength={10} placeholder="10-digit mobile" value={form.mobile} onChange={(e) => setForm({...form, mobile: e.target.value})} className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:border-brand-navy/80 focus:bg-white outline-none transition-colors" />
               </div>
               <div className="lg:col-span-1">
                 <label className="block text-xs font-bold text-gray-700 mb-1">City</label>
-                <input required type="text" placeholder="e.g. Pune" value={form.city} onChange={(e) => setForm({...form, city: e.target.value})} className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:border-indigo-500 focus:bg-white outline-none transition-colors" />
+                <input required type="text" placeholder="e.g. Pune" value={form.city} onChange={(e) => setForm({...form, city: e.target.value})} className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:border-brand-navy/80 focus:bg-white outline-none transition-colors" />
               </div>
               <div className="lg:col-span-1">
                 <label className="block text-xs font-bold text-gray-700 mb-1">Plant Interest</label>
-                <select value={form.plantInterest} onChange={(e) => setForm({...form, plantInterest: e.target.value})} className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:border-indigo-500 focus:bg-white outline-none transition-colors">
+                <select value={form.plantInterest} onChange={(e) => setForm({...form, plantInterest: e.target.value})} className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:border-brand-navy/80 focus:bg-white outline-none transition-colors">
                   <option>3 kW Off-Grid</option>
                   <option>5 kW On-Grid</option>
                   <option>10 kW Hybrid</option>
@@ -173,7 +173,7 @@ export default function ReferralSystem() {
                 </select>
               </div>
               <div className="lg:col-span-1">
-                <button type="submit" className="w-full h-[38px] bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-bold shadow-md shadow-indigo-200 transition-all flex items-center justify-center">
+                <button type="submit" className="w-full h-[38px] bg-brand-navy hover:bg-brand-navy text-white rounded-lg text-sm font-bold shadow-md shadow-indigo-200 transition-all flex items-center justify-center">
                   Submit Lead
                 </button>
               </div>
@@ -196,7 +196,7 @@ export default function ReferralSystem() {
                 placeholder="Search leads..."
                 value={searchQuery}
                 onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
-                className="w-full bg-white border border-gray-300 rounded-lg pl-8 pr-2 py-1.5 focus:outline-none focus:border-indigo-500 text-xs md:text-sm h-[32px] md:h-[38px]"
+                className="w-full bg-white border border-gray-300 rounded-lg pl-8 pr-2 py-1.5 focus:outline-none focus:border-brand-navy/80 text-xs md:text-sm h-[32px] md:h-[38px]"
               />
             </div>
           </div>
@@ -217,29 +217,29 @@ export default function ReferralSystem() {
           totalResults={filteredLeads.length}
           itemsPerPageOptions={[50, 100, 200]}
           renderRow={(lead, idx) => (
-            <tr key={idx} className="hover:bg-indigo-50/30 transition-colors border-b border-gray-100">
+            <tr key={idx} className="hover:bg-brand-navy/30 transition-colors border-b border-gray-100">
               <td className="px-4 py-3 text-sm font-bold text-gray-900 text-center whitespace-nowrap">{lead.referralId}</td>
-              <td className="px-4 py-3 text-sm font-bold text-indigo-700 text-center whitespace-nowrap">{lead.name}</td>
+              <td className="px-4 py-3 text-sm font-bold text-brand-navy text-center whitespace-nowrap">{lead.name}</td>
               <td className="px-4 py-3 text-sm text-gray-600 text-center whitespace-nowrap">{lead.mobile}</td>
               <td className="px-4 py-3 text-sm text-gray-600 text-center whitespace-nowrap">{lead.city}</td>
               <td className="px-4 py-3 text-sm text-gray-900 text-center whitespace-nowrap">{lead.plantInterest}</td>
               <td className="px-4 py-3 text-center">
                 <span className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
-                  lead.status === 'Converted' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
+                  lead.status === 'Converted' ? 'bg-brand-orange/10 text-brand-orange' : 'bg-brand-orange/10 text-brand-orange'
                 }`}>
                   {lead.status}
                 </span>
               </td>
-              <td className="px-4 py-3 text-sm font-bold text-emerald-600 text-center whitespace-nowrap">{lead.rewardAmount}</td>
+              <td className="px-4 py-3 text-sm font-bold text-brand-orange text-center whitespace-nowrap">{lead.rewardAmount}</td>
               <td className="px-4 py-3 text-center">
                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold ${
-                  lead.rewardStatus === 'Paid' ? 'bg-emerald-50 text-emerald-600 border border-emerald-200' : 'bg-gray-100 text-gray-500'
+                  lead.rewardStatus === 'Paid' ? 'bg-brand-orange/10 text-brand-orange border border-brand-orange/30' : 'bg-gray-100 text-gray-500'
                 }`}>
                   {lead.rewardStatus}
                 </span>
               </td>
               <td className="px-4 py-3 text-center">
-                <button onClick={() => handleOpenDetail(lead)} className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-lg text-xs font-bold transition-colors whitespace-nowrap">
+                <button onClick={() => handleOpenDetail(lead)} className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 bg-brand-navy/10 hover:bg-brand-navy/10 text-brand-navy rounded-lg text-xs font-bold transition-colors whitespace-nowrap">
                   <Info size={14} /> Details
                 </button>
               </td>
@@ -248,16 +248,16 @@ export default function ReferralSystem() {
           renderCard={(lead, idx) => {
             const globalIdx = (currentPage - 1) * itemsPerPage + idx + 1;
             return (
-              <div key={idx} className="bg-white rounded-xl border border-indigo-50 shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-indigo-100">
+              <div key={idx} className="bg-white rounded-xl border border-brand-navy/10 shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-brand-navy/10">
                 <div className="flex justify-between items-center pb-2 border-b border-slate-50">
                   <div className="flex items-center gap-2">
                     <span className="w-5 h-5 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[10px] font-black text-slate-500">
                       {globalIdx}
                     </span>
-                    <span className="text-sm font-black text-indigo-700 truncate max-w-[150px]">{lead.name}</span>
+                    <span className="text-sm font-black text-brand-navy truncate max-w-[150px]">{lead.name}</span>
                   </div>
                   <span className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
-                    lead.status === 'Converted' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
+                    lead.status === 'Converted' ? 'bg-brand-orange/10 text-brand-orange' : 'bg-brand-orange/10 text-brand-orange'
                   }`}>
                     {lead.status}
                   </span>
@@ -273,7 +273,7 @@ export default function ReferralSystem() {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-gray-400 block uppercase text-[8px] tracking-tight">Reward</span>
-                    <span className="font-semibold text-emerald-600">{lead.rewardAmount}</span>
+                    <span className="font-semibold text-brand-orange">{lead.rewardAmount}</span>
                   </div>
                   <div className="flex flex-col">
                     <span className="text-gray-400 block uppercase text-[8px] tracking-tight">Payout</span>
@@ -281,7 +281,7 @@ export default function ReferralSystem() {
                   </div>
                 </div>
                 <div className="flex gap-2 pt-2 border-t border-slate-100 mt-1">
-                  <button onClick={() => handleOpenDetail(lead)} className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 bg-indigo-50 text-indigo-700 rounded-lg text-xs font-bold">
+                  <button onClick={() => handleOpenDetail(lead)} className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 bg-brand-navy/10 text-brand-navy rounded-lg text-xs font-bold">
                     <Info size={14} /> View Details
                   </button>
                 </div>
@@ -297,7 +297,7 @@ export default function ReferralSystem() {
           <div className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-200">
             <div className="flex justify-between items-center p-4 md:p-5 border-b border-gray-100 bg-gray-50/50">
               <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                <Users className="text-indigo-600" /> Referral Details
+                <Users className="text-brand-navy" /> Referral Details
               </h3>
               <button onClick={() => setShowDetail(false)} className="text-gray-400 hover:text-gray-600 p-1">
                 ✕
@@ -328,17 +328,17 @@ export default function ReferralSystem() {
                 </div>
                 <div>
                   <div className="text-xs text-gray-500 font-semibold mb-0.5">Lead Status</div>
-                  <div className="font-bold text-indigo-700">{selectedLead.status}</div>
+                  <div className="font-bold text-brand-navy">{selectedLead.status}</div>
                 </div>
                 <div className="col-span-2 border-t border-gray-100 pt-3 mt-1 grid grid-cols-2">
                   <div>
                     <div className="text-xs text-gray-500 font-semibold mb-0.5">Reward Amount</div>
-                    <div className="font-black text-emerald-600 text-lg">{selectedLead.rewardAmount}</div>
+                    <div className="font-black text-brand-orange text-lg">{selectedLead.rewardAmount}</div>
                   </div>
                   <div>
                     <div className="text-xs text-gray-500 font-semibold mb-0.5">Payout Status</div>
                     <div className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
-                      selectedLead.rewardStatus === 'Paid' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
+                      selectedLead.rewardStatus === 'Paid' ? 'bg-brand-orange/10 text-brand-orange' : 'bg-brand-orange/10 text-brand-orange'
                     }`}>
                       {selectedLead.rewardStatus}
                     </div>
@@ -346,12 +346,12 @@ export default function ReferralSystem() {
                 </div>
               </div>
 
-              <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-4 mt-2 text-xs text-indigo-800">
+              <div className="bg-brand-navy/10 border border-brand-navy/10 rounded-xl p-4 mt-2 text-xs text-brand-navy">
                 <strong>Payout Rule:</strong> Rewards are cleared and paid directly to your linked bank account within 7 working days once the lead completes site verification and pays their system advance.
               </div>
 
               <div className="flex justify-end pt-2 mt-2">
-                <button onClick={() => setShowDetail(false)} className="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-bold shadow-md shadow-indigo-200 transition-all">
+                <button onClick={() => setShowDetail(false)} className="px-5 py-2 bg-brand-navy hover:bg-brand-navy text-white rounded-xl text-sm font-bold shadow-md shadow-indigo-200 transition-all">
                   Close
                 </button>
               </div>

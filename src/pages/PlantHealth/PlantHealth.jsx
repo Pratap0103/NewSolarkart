@@ -76,9 +76,9 @@ export default function PlantHealth() {
         </div>
 
         <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-          <div className="absolute -right-4 -top-4 w-16 h-16 bg-blue-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+          <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-navy/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
           <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-            <BatteryCharging size={14} className="text-blue-500 hidden sm:block" />
+            <BatteryCharging size={14} className="text-brand-navy/80 hidden sm:block" />
             <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Battery</span>
           </div>
           <div className="z-10 mt-0.5 sm:mt-1 w-full">
@@ -87,9 +87,9 @@ export default function PlantHealth() {
         </div>
 
         <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-          <div className="absolute -right-4 -top-4 w-16 h-16 bg-emerald-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+          <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-orange/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
           <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-            <Sun size={14} className="text-emerald-500 hidden sm:block" />
+            <Sun size={14} className="text-brand-orange/80 hidden sm:block" />
             <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Panel</span>
           </div>
           <div className="z-10 mt-0.5 sm:mt-1 w-full">
@@ -98,9 +98,9 @@ export default function PlantHealth() {
         </div>
 
         <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-          <div className="absolute -right-4 -top-4 w-16 h-16 bg-amber-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+          <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-orange/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
           <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-            <FileWarning size={14} className="text-amber-500 hidden sm:block" />
+            <FileWarning size={14} className="text-brand-orange/80 hidden sm:block" />
             <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Faults</span>
           </div>
           <div className="z-10 mt-0.5 sm:mt-1 w-full">
@@ -109,9 +109,9 @@ export default function PlantHealth() {
         </div>
 
         <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-          <div className="absolute -right-4 -top-4 w-16 h-16 bg-emerald-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+          <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-orange/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
           <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-            <Activity size={14} className="text-emerald-500 hidden sm:block" />
+            <Activity size={14} className="text-brand-orange/80 hidden sm:block" />
             <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Efficiency</span>
           </div>
           <div className="z-10 mt-0.5 sm:mt-1 w-full">
@@ -124,7 +124,7 @@ export default function PlantHealth() {
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-2 lg:gap-4 w-full px-2 sm:px-0 mt-4">
         <div>
           <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-            <Cpu className="text-indigo-600" /> Hardware Diagnostic Panel
+            <Cpu className="text-brand-navy" /> Hardware Diagnostic Panel
           </h3>
         </div>
         <div className="flex flex-col lg:flex-row w-full lg:w-auto gap-2 lg:gap-3 items-center">
@@ -136,7 +136,7 @@ export default function PlantHealth() {
                 placeholder="Search components..."
                 value={searchQuery}
                 onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
-                className="w-full bg-white border border-gray-300 rounded-lg pl-8 pr-2 py-1.5 focus:outline-none focus:border-indigo-500 text-xs md:text-sm h-[32px] md:h-[38px]"
+                className="w-full bg-white border border-gray-300 rounded-lg pl-8 pr-2 py-1.5 focus:outline-none focus:border-brand-navy/80 text-xs md:text-sm h-[32px] md:h-[38px]"
               />
             </div>
           </div>
@@ -157,12 +157,12 @@ export default function PlantHealth() {
           totalResults={filteredComps.length}
           itemsPerPageOptions={[50, 100, 200]}
           renderRow={(comp, idx) => (
-            <tr key={idx} className="hover:bg-indigo-50/30 transition-colors border-b border-gray-100">
+            <tr key={idx} className="hover:bg-brand-navy/30 transition-colors border-b border-gray-100">
               <td className="px-4 py-3 text-sm font-bold text-gray-900 text-center whitespace-nowrap">{comp.component}</td>
               <td className="px-4 py-3 text-center">
                 <span className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
-                  comp.status === 'Healthy' ? 'bg-emerald-100 text-emerald-800' : 
-                  comp.status === 'Warning' ? 'bg-red-100 text-red-800' : 'bg-amber-100 text-amber-800'
+                  comp.status === 'Healthy' ? 'bg-brand-orange/10 text-brand-orange' : 
+                  comp.status === 'Warning' ? 'bg-red-100 text-red-800' : 'bg-brand-orange/10 text-brand-orange'
                 }`}>
                   {comp.status}
                 </span>
@@ -174,7 +174,7 @@ export default function PlantHealth() {
               </td>
               <td className="px-4 py-3 text-center">
                 <div className="flex justify-center gap-2">
-                  <button onClick={() => handleViewDetails(comp)} className="px-3 py-1.5 bg-gray-50 hover:bg-indigo-50 text-gray-700 hover:text-indigo-700 rounded-lg text-xs font-bold transition-colors border border-gray-200 whitespace-nowrap">
+                  <button onClick={() => handleViewDetails(comp)} className="px-3 py-1.5 bg-gray-50 hover:bg-brand-navy/10 text-gray-700 hover:text-brand-navy rounded-lg text-xs font-bold transition-colors border border-gray-200 whitespace-nowrap">
                     View
                   </button>
                   {comp.alert !== 'None' && (
@@ -189,17 +189,17 @@ export default function PlantHealth() {
           renderCard={(comp, idx) => {
             const globalIdx = (currentPage - 1) * itemsPerPage + idx + 1;
             return (
-              <div key={idx} className={`bg-white rounded-xl border ${comp.status === 'Warning' ? 'border-red-200 bg-red-50/10' : 'border-indigo-50'} shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-indigo-100`}>
+              <div key={idx} className={`bg-white rounded-xl border ${comp.status === 'Warning' ? 'border-red-200 bg-red-50/10' : 'border-brand-navy/10'} shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-brand-navy/10`}>
                 <div className="flex justify-between items-center pb-2 border-b border-slate-50">
                   <div className="flex items-center gap-2">
                     <span className="w-5 h-5 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[10px] font-black text-slate-500">
                       {globalIdx}
                     </span>
-                    <span className="text-sm font-black text-indigo-700 truncate max-w-[150px]">{comp.component}</span>
+                    <span className="text-sm font-black text-brand-navy truncate max-w-[150px]">{comp.component}</span>
                   </div>
                   <span className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
-                    comp.status === 'Healthy' ? 'bg-emerald-100 text-emerald-800' : 
-                    comp.status === 'Warning' ? 'bg-red-100 text-red-800' : 'bg-amber-100 text-amber-800'
+                    comp.status === 'Healthy' ? 'bg-brand-orange/10 text-brand-orange' : 
+                    comp.status === 'Warning' ? 'bg-red-100 text-red-800' : 'bg-brand-orange/10 text-brand-orange'
                   }`}>
                     {comp.status}
                   </span>
@@ -221,7 +221,7 @@ export default function PlantHealth() {
                   )}
                 </div>
                 <div className="flex gap-2 pt-2 border-t border-slate-100 mt-1">
-                  <button onClick={() => handleViewDetails(comp)} className="flex-1 flex justify-center items-center py-1.5 bg-indigo-50 text-indigo-700 rounded-lg text-xs font-bold">
+                  <button onClick={() => handleViewDetails(comp)} className="flex-1 flex justify-center items-center py-1.5 bg-brand-navy/10 text-brand-navy rounded-lg text-xs font-bold">
                     View Data
                   </button>
                   {comp.alert !== 'None' && (
@@ -242,7 +242,7 @@ export default function PlantHealth() {
           <div className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-200">
             <div className="flex justify-between items-center p-4 md:p-5 border-b border-gray-100 bg-gray-50/50">
               <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                <Layers className="text-indigo-600" /> Diagnostics Log
+                <Layers className="text-brand-navy" /> Diagnostics Log
               </h3>
               <button onClick={() => setShowDetails(false)} className="text-gray-400 hover:text-gray-600 p-1">
                 ✕
@@ -258,8 +258,8 @@ export default function PlantHealth() {
                 <div>
                   <div className="text-xs text-gray-500 font-semibold mb-0.5">Hardware Status</div>
                   <div className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
-                    selectedComp.status === 'Healthy' ? 'bg-emerald-100 text-emerald-800' : 
-                    selectedComp.status === 'Warning' ? 'bg-red-100 text-red-800' : 'bg-amber-100 text-amber-800'
+                    selectedComp.status === 'Healthy' ? 'bg-brand-orange/10 text-brand-orange' : 
+                    selectedComp.status === 'Warning' ? 'bg-red-100 text-red-800' : 'bg-brand-orange/10 text-brand-orange'
                   }`}>
                     {selectedComp.status}
                   </div>
@@ -281,11 +281,11 @@ export default function PlantHealth() {
               </div>
 
               <div className="bg-slate-900 border border-slate-700 rounded-xl p-4 mt-2 font-mono text-xs text-slate-300 shadow-inner">
-                <div className="text-emerald-400 font-bold mb-2 uppercase tracking-wider">Raw Diagnostics Streams:</div>
+                <div className="text-brand-orange/80 font-bold mb-2 uppercase tracking-wider">Raw Diagnostics Streams:</div>
                 <div className="flex flex-col gap-1.5 opacity-90">
                   <div className="flex justify-between"><span>Output Voltage:</span> <span className="font-bold text-white">232.4 V</span></div>
                   <div className="flex justify-between"><span>Core Temperature:</span> <span className="font-bold text-white">42.1°C</span></div>
-                  <div className="flex justify-between"><span>Wireless Gateway:</span> <span className="font-bold text-emerald-400">ACTIVE</span></div>
+                  <div className="flex justify-between"><span>Wireless Gateway:</span> <span className="font-bold text-brand-orange/80">ACTIVE</span></div>
                   <div className="flex justify-between"><span>Firmware Version:</span> <span className="font-bold text-white">v2.4.1</span></div>
                   <div className="flex justify-between border-t border-slate-700 pt-1.5 mt-1"><span>Packet Loss:</span> <span className="font-bold text-white">0.01%</span></div>
                 </div>

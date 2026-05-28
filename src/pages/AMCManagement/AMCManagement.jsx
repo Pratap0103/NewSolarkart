@@ -76,7 +76,7 @@ export default function AMCManagement() {
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-2 lg:gap-4 w-full px-2 sm:px-0">
         <div>
           <h2 className="text-lg md:text-xl font-bold text-gray-900 flex items-center gap-2">
-            <Shield className="text-indigo-600" /> AMC Management
+            <Shield className="text-brand-navy" /> AMC Management
           </h2>
         </div>
         <div className="flex flex-col lg:flex-row w-full lg:w-auto gap-2 lg:gap-3 items-center">
@@ -88,13 +88,13 @@ export default function AMCManagement() {
                 placeholder="Search AMC history..."
                 value={searchQuery}
                 onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
-                className="w-full bg-white border border-gray-300 rounded-lg pl-8 pr-2 py-1.5 focus:outline-none focus:border-indigo-500 text-xs md:text-sm h-[32px] md:h-[38px]"
+                className="w-full bg-white border border-gray-300 rounded-lg pl-8 pr-2 py-1.5 focus:outline-none focus:border-brand-navy/80 text-xs md:text-sm h-[32px] md:h-[38px]"
               />
             </div>
           </div>
           <button 
             onClick={() => setShowRenewModal(true)}
-            className="w-full lg:w-auto bg-indigo-600 hover:bg-indigo-700 text-white px-4 h-[32px] md:h-[38px] rounded-lg text-xs md:text-sm font-bold shadow-sm transition-all active:scale-95 flex items-center justify-center gap-1.5 whitespace-nowrap"
+            className="w-full lg:w-auto bg-brand-navy hover:bg-brand-navy text-white px-4 h-[32px] md:h-[38px] rounded-lg text-xs md:text-sm font-bold shadow-sm transition-all active:scale-95 flex items-center justify-center gap-1.5 whitespace-nowrap"
           >
             <CreditCard size={16} />
             Renew AMC
@@ -105,9 +105,9 @@ export default function AMCManagement() {
       {/* KPI Cards */}
       <div className="grid grid-cols-5 gap-1 sm:gap-4 px-2 sm:px-0 shrink-0">
         <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-          <div className="absolute -right-4 -top-4 w-16 h-16 bg-emerald-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+          <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-orange/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
           <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-            <ShieldAlert size={14} className="text-emerald-500 hidden sm:block" />
+            <ShieldAlert size={14} className="text-brand-orange/80 hidden sm:block" />
             <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">AMC Status</span>
           </div>
           <div className="z-10 mt-0.5 sm:mt-1 w-full">
@@ -116,20 +116,20 @@ export default function AMCManagement() {
         </div>
 
         <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-          <div className="absolute -right-4 -top-4 w-16 h-16 bg-indigo-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+          <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-navy/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
           <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-            <FileCheck size={14} className="text-indigo-500 hidden sm:block" />
+            <FileCheck size={14} className="text-brand-navy/80 hidden sm:block" />
             <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Plan</span>
           </div>
           <div className="z-10 mt-0.5 sm:mt-1 w-full">
-            <span className="text-[5px] sm:text-xl font-black text-indigo-600 block tracking-tighter truncate leading-tight sm:leading-normal">{amc.planName}</span>
+            <span className="text-[5px] sm:text-xl font-black text-brand-navy block tracking-tighter truncate leading-tight sm:leading-normal">{amc.planName}</span>
           </div>
         </div>
 
         <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-          <div className="absolute -right-4 -top-4 w-16 h-16 bg-blue-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+          <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-navy/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
           <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-            <Clock size={14} className="text-blue-500 hidden sm:block" />
+            <Clock size={14} className="text-brand-navy/80 hidden sm:block" />
             <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Days Left</span>
           </div>
           <div className="z-10 mt-0.5 sm:mt-1 w-full">
@@ -138,20 +138,20 @@ export default function AMCManagement() {
         </div>
 
         <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-          <div className="absolute -right-4 -top-4 w-16 h-16 bg-emerald-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+          <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-orange/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
           <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-            <CheckCircle size={14} className="text-emerald-500 hidden sm:block" />
+            <CheckCircle size={14} className="text-brand-orange/80 hidden sm:block" />
             <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Services</span>
           </div>
           <div className="z-10 mt-0.5 sm:mt-1 w-full">
-            <span className="text-[6px] sm:text-2xl font-black text-emerald-600 block tracking-tighter">{amc.servicesRemaining}</span>
+            <span className="text-[6px] sm:text-2xl font-black text-brand-orange block tracking-tighter">{amc.servicesRemaining}</span>
           </div>
         </div>
 
         <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-          <div className="absolute -right-4 -top-4 w-16 h-16 bg-amber-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+          <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-orange/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
           <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-            <CreditCard size={14} className="text-amber-500 hidden sm:block" />
+            <CreditCard size={14} className="text-brand-orange/80 hidden sm:block" />
             <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Renew</span>
           </div>
           <div className="z-10 mt-0.5 sm:mt-1 w-full">
@@ -174,9 +174,9 @@ export default function AMCManagement() {
           totalResults={filteredHistory.length}
           itemsPerPageOptions={[50, 100, 200]}
           renderRow={(item, idx) => (
-            <tr key={idx} className="hover:bg-indigo-50/30 transition-colors border-b border-gray-100">
+            <tr key={idx} className="hover:bg-brand-navy/30 transition-colors border-b border-gray-100">
               <td className="px-4 py-3 text-sm font-bold text-gray-900 text-center whitespace-nowrap">{item.id}</td>
-              <td className="px-4 py-3 text-sm font-bold text-indigo-700 text-center">{item.planName}</td>
+              <td className="px-4 py-3 text-sm font-bold text-brand-navy text-center">{item.planName}</td>
               <td className="px-4 py-3 text-sm text-gray-600 text-center whitespace-nowrap">
                 <div className="flex flex-col items-center">
                   <span className="font-semibold">{item.startDate}</span>
@@ -189,7 +189,7 @@ export default function AMCManagement() {
               </td>
               <td className="px-4 py-3 text-center">
                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold ${
-                  item.status === 'Active' ? 'bg-emerald-100 text-emerald-800' : 'bg-gray-100 text-gray-600'
+                  item.status === 'Active' ? 'bg-brand-orange/10 text-brand-orange' : 'bg-gray-100 text-gray-600'
                 }`}>
                   {item.status}
                 </span>
@@ -197,7 +197,7 @@ export default function AMCManagement() {
               <td className="px-4 py-3 text-center">
                 <button
                   onClick={() => toast.success(`Downloaded agreement for ${item.id}`)}
-                  className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-lg text-xs font-bold transition-colors whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 bg-brand-navy/10 hover:bg-brand-navy/10 text-brand-navy rounded-lg text-xs font-bold transition-colors whitespace-nowrap"
                 >
                   <FileCheck size={14} /> Agreement
                 </button>
@@ -207,16 +207,16 @@ export default function AMCManagement() {
           renderCard={(item, idx) => {
             const globalIdx = (currentPage - 1) * itemsPerPage + idx + 1;
             return (
-              <div key={idx} className="bg-white rounded-xl border border-indigo-50 shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-indigo-100">
+              <div key={idx} className="bg-white rounded-xl border border-brand-navy/10 shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-brand-navy/10">
                 <div className="flex justify-between items-center pb-2 border-b border-slate-50">
                   <div className="flex items-center gap-2">
                     <span className="w-5 h-5 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[10px] font-black text-slate-500">
                       {globalIdx}
                     </span>
-                    <span className="text-sm font-black text-indigo-700 truncate max-w-[150px]">{item.planName}</span>
+                    <span className="text-sm font-black text-brand-navy truncate max-w-[150px]">{item.planName}</span>
                   </div>
                   <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                    item.status === 'Active' ? 'bg-emerald-100 text-emerald-800' : 'bg-gray-100 text-gray-600'
+                    item.status === 'Active' ? 'bg-brand-orange/10 text-brand-orange' : 'bg-gray-100 text-gray-600'
                   }`}>
                     {item.status}
                   </span>
@@ -238,7 +238,7 @@ export default function AMCManagement() {
                 <div className="flex gap-2 pt-2 border-t border-slate-100 mt-1">
                   <button
                     onClick={() => toast.success(`Downloaded agreement for ${item.id}`)}
-                    className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 bg-indigo-50 text-indigo-700 rounded-lg text-xs font-bold"
+                    className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 bg-brand-navy/10 text-brand-navy rounded-lg text-xs font-bold"
                   >
                     <FileCheck size={14} /> Download Agreement
                   </button>
@@ -267,7 +267,7 @@ export default function AMCManagement() {
               </div>
               <div>
                 <label className="block text-xs font-bold text-gray-700 mb-1">Select Renewal Plan</label>
-                <select value={form.newPlan} onChange={handlePlanChange} className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none">
+                <select value={form.newPlan} onChange={handlePlanChange} className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm focus:border-brand-navy/80 focus:ring-1 focus:ring-brand-navy/80 outline-none">
                   <option>SolarKart Care Platinum</option>
                   <option>SolarKart Gold Guard</option>
                   <option>SolarKart Standard Care</option>
@@ -276,7 +276,7 @@ export default function AMCManagement() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-700 mb-1">Duration</label>
-                  <select value={form.duration} onChange={(e) => setForm({...form, duration: e.target.value})} className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none">
+                  <select value={form.duration} onChange={(e) => setForm({...form, duration: e.target.value})} className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm focus:border-brand-navy/80 focus:ring-1 focus:ring-brand-navy/80 outline-none">
                     <option>1 Year</option>
                     <option>2 Years</option>
                     <option>3 Years</option>
@@ -284,12 +284,12 @@ export default function AMCManagement() {
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-gray-700 mb-1">Total Amount</label>
-                  <input type="text" readOnly value={form.amount} className="w-full px-3 py-2 bg-emerald-50 border border-emerald-200 rounded-lg text-sm font-bold text-emerald-700" />
+                  <input type="text" readOnly value={form.amount} className="w-full px-3 py-2 bg-brand-orange/10 border border-brand-orange/30 rounded-lg text-sm font-bold text-brand-orange" />
                 </div>
               </div>
               <div>
                 <label className="block text-xs font-bold text-gray-700 mb-1">Payment Mode</label>
-                <select value={form.paymentMode} onChange={(e) => setForm({...form, paymentMode: e.target.value})} className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none">
+                <select value={form.paymentMode} onChange={(e) => setForm({...form, paymentMode: e.target.value})} className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm focus:border-brand-navy/80 focus:ring-1 focus:ring-brand-navy/80 outline-none">
                   <option>UPI / NetBanking</option>
                   <option>Credit / Debit Card</option>
                   <option>Cash on Delivery (Site Visit)</option>
@@ -300,7 +300,7 @@ export default function AMCManagement() {
                 <button type="button" onClick={() => setShowRenewModal(false)} className="flex-1 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl text-sm font-bold transition-colors">
                   Cancel
                 </button>
-                <button type="submit" className="flex-1 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-bold shadow-md shadow-indigo-200 transition-all flex items-center justify-center gap-2">
+                <button type="submit" className="flex-1 px-4 py-2 bg-brand-navy hover:bg-brand-navy text-white rounded-xl text-sm font-bold shadow-md shadow-indigo-200 transition-all flex items-center justify-center gap-2">
                   Pay Now
                 </button>
               </div>

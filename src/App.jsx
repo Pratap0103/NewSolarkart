@@ -4,17 +4,17 @@ import { Toaster } from 'react-hot-toast';
 import Layout from './components/Layout';
 import Login from './pages/Login';
 import Settings from './pages/Settings';
-import Dasboard from './pages/Dashboard/Dasboard';
-import MySolarHistory from './pages/MySolarHistory/mySolarHistory';
-import MyMonySaves from './pages/MyMoneySaved/MyMonySaves';
-import GetHelp from './pages/GetHelp/GetHelp';
+import DashboardRouter from './pages/Dashboard';
+import MySolarHistory from './pages/MySolarHistory';
+import MyMonySaves from './pages/MyMoneySaved';
+import GetHelp from './pages/GetHelp';
 import AISolarAssistant from './pages/AISolarAssistant/AISolarAssistant';
-import AMCManagement from './pages/AMCManagement/AMCManagement';
-import DocumentCenter from './pages/DocumentCenter/DocumentCenter';
-import LearningCenter from './pages/LearningCenter/LearningCenter';
+import AMCManagement from './pages/AMCManagement';
+import DocumentCenter from './pages/DocumentCenter';
+import LearningCenter from './pages/LearningCenter';
 import Profile from './pages/Profile/Profile';
-import NotificationsPage from './pages/NotificationsPage/NotificationsPage';
-import ReferralSystem from './pages/ReferralSystem/ReferralSystem';
+import NotificationsPage from './pages/NotificationsPage';
+import ReferralSystem from './pages/ReferralSystem';
 import PlantHealth from './pages/PlantHealth/PlantHealth';
 
 import ProtectedRoute from './components/ProtectedRoute';
@@ -39,7 +39,7 @@ function App() {
             </ProtectedRoute>
           }>
             <Route index element={<Navigate to="/dashboard" replace />} />
-            <Route path="dashboard" element={<Dasboard />} />
+            <Route path="dashboard" element={<DashboardRouter />} />
             <Route path="settings" element={
               <AdminRoute>
                 <Settings />

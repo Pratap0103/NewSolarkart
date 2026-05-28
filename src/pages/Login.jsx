@@ -55,19 +55,14 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-sky-50 to-sky-100">
+    <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-brand-navy/10 to-brand-navy/10">
       {/* Center Content */}
       <div className="flex-1 flex items-center justify-center p-4">
         <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 space-y-6">
           
           {/* Logo Section */}
-          <div className="flex flex-col items-center space-y-6">
-            <div className="w-28 h-28 rounded-full border-4 border-sky-400 flex items-center justify-center shadow-lg bg-indigo-600">
-              <Sun size={64} className="text-white" />
-            </div>
-            <div className="text-center space-y-2">
-              <h1 className="text-4xl font-bold text-gray-900">SolarKart</h1>
-            </div>
+          <div className="flex flex-col items-center space-y-4">
+            <img src="/src/Assets/Logo.png" alt="SolarKart" className="h-28 w-auto object-contain" />
           </div>
 
           {/* Form */}
@@ -88,7 +83,7 @@ const Login = () => {
                   required
                   value={id}
                   onChange={(e) => setId(e.target.value)}
-                  className="block w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:bg-white transition-all"
+                  className="block w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-navy/80 focus:bg-white transition-all"
                   placeholder="Enter user ID"
                 />
               </div>
@@ -110,7 +105,7 @@ const Login = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full pl-10 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:bg-white transition-all"
+                  className="block w-full pl-10 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-navy/80 focus:bg-white transition-all"
                   placeholder="Enter password"
                 />
                 <button
@@ -131,7 +126,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={submitting}
-              className={`w-full py-3 px-4 text-base font-bold bg-sky-600 text-white rounded-lg hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-600 transition-all ${
+              className={`w-full py-3 px-4 text-base font-bold bg-brand-navy text-white rounded-lg hover:bg-brand-navy focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-navy transition-all ${
                 submitting ? 'opacity-70 cursor-not-allowed' : ''
               }`}
             >
@@ -163,17 +158,17 @@ const Login = () => {
               <button
                 type="button"
                 onClick={() => handleDemoCredential('admin')}
-                className="flex flex-col items-center justify-center p-3 bg-white border border-gray-200 hover:border-sky-500 hover:shadow-md hover:bg-sky-50 rounded-lg transition-all group"
+                className="flex flex-col items-center justify-center p-3 bg-white border border-gray-200 hover:border-brand-navy/80 hover:shadow-md hover:bg-brand-navy/10 rounded-lg transition-all group"
               >
-                <span className="font-bold text-gray-800 text-sm group-hover:text-sky-700">Admin</span>
+                <span className="font-bold text-gray-800 text-sm group-hover:text-brand-navy">Admin</span>
                 <span className="text-[10px] text-gray-500 font-mono mt-1">ID: admin</span>
               </button>
               <button
                 type="button"
                 onClick={() => handleDemoCredential('user')}
-                className="flex flex-col items-center justify-center p-3 bg-white border border-gray-200 hover:border-sky-500 hover:shadow-md hover:bg-sky-50 rounded-lg transition-all group"
+                className="flex flex-col items-center justify-center p-3 bg-white border border-gray-200 hover:border-brand-navy/80 hover:shadow-md hover:bg-brand-navy/10 rounded-lg transition-all group"
               >
-                <span className="font-bold text-gray-800 text-sm group-hover:text-sky-700">User</span>
+                <span className="font-bold text-gray-800 text-sm group-hover:text-brand-navy">User</span>
                 <span className="text-[10px] text-gray-500 font-mono mt-1">ID: user</span>
               </button>
             </div>
@@ -183,8 +178,8 @@ const Login = () => {
 
       {/* Footer at Bottom */}
       <div className="py-6 text-center">
-        <p className="text-xs text-sky-700">
-          Powered by <span className="font-semibold text-sky-600">SolarKart</span>
+        <p className="text-xs text-brand-navy">
+          Powered by <span className="font-semibold text-brand-navy">Botivate</span>
         </p>
       </div>
     </div>

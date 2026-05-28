@@ -17,22 +17,22 @@ const CustomTooltip = ({ active, payload }) => {
 
     const WeatherIcon = () => {
       switch (data.weather) {
-        case 'Sunny': return <Sun className="text-amber-500 animate-spin-slow" size={16} />;
+        case 'Sunny': return <Sun className="text-brand-orange/80 animate-spin-slow" size={16} />;
         case 'Cloudy': return <Cloud className="text-gray-400" size={16} />;
-        case 'Rainy': return <CloudRain className="text-blue-400" size={16} />;
-        default: return <CloudSun className="text-amber-400" size={16} />;
+        case 'Rainy': return <CloudRain className="text-brand-navy/80" size={16} />;
+        default: return <CloudSun className="text-brand-orange/80" size={16} />;
       }
     };
 
     return (
-      <div className="bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-indigo-50/80 text-xs font-sans space-y-3 min-w-[220px]">
+      <div className="bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-brand-navy/80 text-xs font-sans space-y-3 min-w-[220px]">
         {/* Header with Time */}
         <div className="flex justify-between items-center border-b border-slate-100 pb-2.5">
           <span className="font-extrabold text-slate-800 text-[13px]">{data.time}</span>
           <span className={`px-2.5 py-0.5 rounded-full text-[9px] uppercase font-black tracking-wider ${
-            data.status === 'Optimal' ? 'bg-emerald-100 text-emerald-700' :
-            data.status === 'Active' ? 'bg-indigo-100 text-indigo-700' :
-            data.status === 'Low Yield' ? 'bg-amber-100 text-amber-700' :
+            data.status === 'Optimal' ? 'bg-brand-orange/10 text-brand-orange' :
+            data.status === 'Active' ? 'bg-brand-navy/10 text-brand-navy' :
+            data.status === 'Low Yield' ? 'bg-brand-orange/10 text-brand-orange' :
             'bg-slate-100 text-slate-700'
           }`}>
             {data.status}
@@ -43,7 +43,7 @@ const CustomTooltip = ({ active, payload }) => {
         <div className="space-y-2 text-slate-600 font-semibold">
           <div className="flex justify-between items-center gap-4">
             <span className="text-slate-400 font-bold">Total Generation:</span>
-            <span className="font-black text-indigo-600 text-sm">{data.generation.toFixed(2)} kWh</span>
+            <span className="font-black text-brand-navy text-sm">{data.generation.toFixed(2)} kWh</span>
           </div>
           <div className="flex justify-between items-center gap-4">
             <span className="text-slate-400 font-bold">Average Power:</span>
@@ -172,8 +172,8 @@ export default function CandleBarChart({ data }) {
     <div className="w-full h-full flex flex-col">
       <div className="flex flex-row flex-wrap justify-between items-center gap-1.5 mb-2 px-2">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-          <h3 className="text-[10px] sm:text-xs md:text-sm font-semibold text-indigo-950 uppercase tracking-wider flex items-center gap-1 sm:gap-2">
-            <Activity size={14} className="text-indigo-600 animate-pulse sm:w-4 sm:h-4" />
+          <h3 className="text-[10px] sm:text-xs md:text-sm font-semibold text-brand-navy uppercase tracking-wider flex items-center gap-1 sm:gap-2">
+            <Activity size={14} className="text-brand-navy animate-pulse sm:w-4 sm:h-4" />
             Solar 3D Telemetry
           </h3>
           <span className="text-[7px] sm:text-[9px] md:text-[10px] text-slate-400 font-normal uppercase tracking-wide">
@@ -181,16 +181,16 @@ export default function CandleBarChart({ data }) {
           </span>
         </div>
         <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[8px] sm:text-[10px] md:text-xs">
-          <div className="flex items-center gap-1 sm:gap-1.5 font-bold text-emerald-600">
-            <span className="w-2 h-2 sm:w-3 sm:h-3 bg-emerald-500 rounded-sm shadow-sm"></span>
+          <div className="flex items-center gap-1 sm:gap-1.5 font-bold text-brand-orange">
+            <span className="w-2 h-2 sm:w-3 sm:h-3 bg-brand-orange/80 rounded-sm shadow-sm"></span>
             Optimal Yield
           </div>
-          <div className="flex items-center gap-1 sm:gap-1.5 font-bold text-indigo-600">
-            <span className="w-2 h-2 sm:w-3 sm:h-3 bg-indigo-500 rounded-sm shadow-sm"></span>
+          <div className="flex items-center gap-1 sm:gap-1.5 font-bold text-brand-navy">
+            <span className="w-2 h-2 sm:w-3 sm:h-3 bg-brand-navy/80 rounded-sm shadow-sm"></span>
             Active Yield
           </div>
-          <div className="flex items-center gap-1 sm:gap-1.5 font-bold text-amber-600">
-            <span className="w-2 h-2 sm:w-3 sm:h-3 bg-amber-500 rounded-sm shadow-sm"></span>
+          <div className="flex items-center gap-1 sm:gap-1.5 font-bold text-brand-orange">
+            <span className="w-2 h-2 sm:w-3 sm:h-3 bg-brand-orange/80 rounded-sm shadow-sm"></span>
             Low Yield
           </div>
         </div>

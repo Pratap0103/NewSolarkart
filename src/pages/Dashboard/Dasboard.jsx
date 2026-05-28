@@ -529,6 +529,46 @@ export default function Dasboard({
         </div>
       </div>
 
+      {/* --- DAILY GENERATION HISTORY TABLE --- */}
+      <div className="card mx-2 sm:mx-0" style={{ border: '1px solid #E2E8F0', background: '#FFF', marginTop: '16px', padding: '0' }}>
+        <div className="card-header" style={{ padding: '16px', borderBottom: '1px solid #F1F5F9' }}>
+          <h3 className="card-title flex items-center gap-2" style={{ color: 'var(--dark-blue)', fontSize: '14px', margin: 0 }}>
+            <FileText size={16} style={{ color: 'var(--sky-blue)' }} /> Recent Energy History
+          </h3>
+        </div>
+        
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse" style={{ minWidth: '400px' }}>
+            <thead>
+              <tr style={{ background: '#F8FAFC', color: 'var(--gray-text)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <th style={{ padding: '12px 16px', fontWeight: '800' }}>Date</th>
+                <th style={{ padding: '12px 16px', fontWeight: '800' }}>Gen (kWh)</th>
+                <th style={{ padding: '12px 16px', fontWeight: '800' }}>Used (kWh)</th>
+                <th style={{ padding: '12px 16px', fontWeight: '800', textAlign: 'right' }}>Exported</th>
+              </tr>
+            </thead>
+            <tbody style={{ fontSize: '12px' }}>
+              {[
+                { date: '27 May 2026', gen: 24.8, used: 12.5, export: '+12.3' },
+                { date: '26 May 2026', gen: 26.2, used: 14.0, export: '+12.2' },
+                { date: '25 May 2026', gen: 22.1, used: 11.5, export: '+10.6' },
+                { date: '24 May 2026', gen: 19.5, used: 15.2, export: '+4.3' },
+              ].map((row, i) => (
+                <tr key={i} style={{ borderBottom: '1px solid #F1F5F9' }}>
+                  <td style={{ padding: '12px 16px', fontWeight: '600', color: 'var(--dark-blue)' }}>{row.date}</td>
+                  <td style={{ padding: '12px 16px', fontWeight: '800', color: '#10B981' }}>{row.gen}</td>
+                  <td style={{ padding: '12px 16px', fontWeight: '600', color: '#EF4444' }}>{row.used}</td>
+                  <td style={{ padding: '12px 16px', fontWeight: '800', color: '#30329A', textAlign: 'right' }}>{row.export}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div style={{ padding: '12px', textAlign: 'center', background: '#F8FAFC', fontSize: '11px', color: '#4f46e5', fontWeight: 'bold', cursor: 'pointer', borderTop: '1px solid #F1F5F9' }} onClick={() => handleNavigate('analytics')}>
+          View Full History →
+        </div>
+      </div>
+
     </div>
   );
 }

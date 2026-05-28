@@ -94,9 +94,9 @@ export default function MyMonySaves() {
       <div className="grid grid-cols-4 gap-1 sm:gap-4 px-2 sm:px-0">
         {/* Net Investment */}
         <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-          <div className="absolute -right-4 -top-4 w-16 h-16 bg-blue-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+          <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-navy/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
           <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-            <DollarSign size={14} className="text-blue-500 hidden sm:block" />
+            <DollarSign size={14} className="text-brand-navy/80 hidden sm:block" />
             <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Net Inv</span>
           </div>
           <div className="z-10 mt-0.5 sm:mt-1 w-full">
@@ -106,37 +106,37 @@ export default function MyMonySaves() {
 
         {/* Total Save */}
         <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-          <div className="absolute -right-4 -top-4 w-16 h-16 bg-emerald-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+          <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-orange/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
           <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-            <TrendingUp size={14} className="text-emerald-500 hidden sm:block" />
+            <TrendingUp size={14} className="text-brand-orange/80 hidden sm:block" />
             <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Total Save</span>
           </div>
           <div className="z-10 mt-0.5 sm:mt-1 w-full">
-            <span className="text-[6px] sm:text-2xl font-black text-emerald-600 block tracking-tighter">₹{kpis.totalSave.toLocaleString()}</span>
+            <span className="text-[6px] sm:text-2xl font-black text-brand-orange block tracking-tighter">₹{kpis.totalSave.toLocaleString()}</span>
           </div>
         </div>
 
         {/* ROI % */}
         <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-          <div className="absolute -right-4 -top-4 w-16 h-16 bg-indigo-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+          <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-navy/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
           <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-            <Percent size={14} className="text-indigo-500 hidden sm:block" />
+            <Percent size={14} className="text-brand-navy/80 hidden sm:block" />
             <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">ROI %</span>
           </div>
           <div className="z-10 mt-0.5 sm:mt-1 w-full">
-            <span className="text-[6px] sm:text-2xl font-black text-indigo-600 block tracking-tighter">{kpis.roiPercent}%</span>
+            <span className="text-[6px] sm:text-2xl font-black text-brand-navy block tracking-tighter">{kpis.roiPercent}%</span>
           </div>
         </div>
 
         {/* Payback */}
         <div className="bg-white rounded-lg sm:rounded-2xl p-1 sm:p-5 border border-slate-200 shadow-sm flex flex-col items-center sm:items-start justify-center sm:justify-between gap-0.5 sm:gap-2 relative overflow-hidden group hover:shadow-md transition-shadow text-center sm:text-left">
-          <div className="absolute -right-4 -top-4 w-16 h-16 bg-amber-50 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+          <div className="absolute -right-4 -top-4 w-16 h-16 bg-brand-orange/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
           <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2 z-10 text-slate-500 w-full justify-center sm:justify-start">
-            <Activity size={14} className="text-amber-500 hidden sm:block" />
+            <Activity size={14} className="text-brand-orange/80 hidden sm:block" />
             <span className="text-[4px] sm:text-xs font-bold uppercase tracking-wider leading-none sm:leading-tight">Payback</span>
           </div>
           <div className="z-10 mt-0.5 sm:mt-1 w-full">
-            <span className="text-[6px] sm:text-2xl font-black text-amber-600 block tracking-tighter">{kpis.payback}</span>
+            <span className="text-[6px] sm:text-2xl font-black text-brand-orange block tracking-tighter">{kpis.payback}</span>
           </div>
         </div>
       </div>
@@ -154,12 +154,12 @@ export default function MyMonySaves() {
                 placeholder="Search records..."
                 value={filters.searchQuery}
                 onChange={(e) => setFilters({ ...filters, searchQuery: e.target.value })}
-                className="w-full bg-white border border-gray-300 rounded-lg pl-8 pr-2 py-1.5 focus:outline-none focus:border-indigo-500 text-xs md:text-sm h-[32px] md:h-[38px]"
+                className="w-full bg-white border border-gray-300 rounded-lg pl-8 pr-2 py-1.5 focus:outline-none focus:border-brand-navy/80 text-xs md:text-sm h-[32px] md:h-[38px]"
               />
             </div>
             <button
                onClick={() => setShowMobileFilters(!showMobileFilters)}
-               className={`lg:hidden flex items-center justify-center rounded-lg shadow-sm h-[32px] w-[32px] flex-shrink-0 transition ${showMobileFilters ? 'bg-indigo-100 text-indigo-700 border-indigo-200' : 'bg-white border border-gray-300 text-gray-600 hover:bg-gray-50'}`}
+               className={`lg:hidden flex items-center justify-center rounded-lg shadow-sm h-[32px] w-[32px] flex-shrink-0 transition ${showMobileFilters ? 'bg-brand-navy/10 text-brand-navy border-brand-navy/30' : 'bg-white border border-gray-300 text-gray-600 hover:bg-gray-50'}`}
                title="Toggle Filters"
             >
               <Filter size={14} />
@@ -230,20 +230,20 @@ export default function MyMonySaves() {
           totalResults={filteredData.length}
           itemsPerPageOptions={[50, 100, 200]}
           renderRow={(item, idx) => (
-            <tr key={idx} className="hover:bg-indigo-50/30 transition-colors border-b border-gray-100">
+            <tr key={idx} className="hover:bg-brand-navy/30 transition-colors border-b border-gray-100">
               <td className="px-4 py-3 text-center text-xs text-gray-600 whitespace-nowrap">{item.year}</td>
               <td className="px-4 py-3 text-center text-xs text-gray-900 font-bold whitespace-nowrap">{item.month}</td>
               <td className="px-4 py-3 text-center text-xs text-gray-600 font-medium whitespace-nowrap">₹{item.before.toLocaleString()}</td>
-              <td className="px-4 py-3 text-center text-xs text-emerald-600 font-bold whitespace-nowrap">₹{item.after.toLocaleString()}</td>
-              <td className="px-4 py-3 text-center text-xs text-emerald-600 font-black whitespace-nowrap bg-indigo-50/20">₹{item.monthlySavings.toLocaleString()}</td>
-              <td className="px-4 py-3 text-center text-xs text-indigo-600 font-bold whitespace-nowrap">₹{item.cumulativeSavings.toLocaleString()}</td>
-              <td className="px-4 py-3 text-center text-xs text-indigo-500 font-bold whitespace-nowrap">{item.roi}%</td>
+              <td className="px-4 py-3 text-center text-xs text-brand-orange font-bold whitespace-nowrap">₹{item.after.toLocaleString()}</td>
+              <td className="px-4 py-3 text-center text-xs text-brand-orange font-black whitespace-nowrap bg-brand-navy/20">₹{item.monthlySavings.toLocaleString()}</td>
+              <td className="px-4 py-3 text-center text-xs text-brand-navy font-bold whitespace-nowrap">₹{item.cumulativeSavings.toLocaleString()}</td>
+              <td className="px-4 py-3 text-center text-xs text-brand-navy/80 font-bold whitespace-nowrap">{item.roi}%</td>
             </tr>
           )}
           renderCard={(item, idx) => {
             const globalIdx = (currentPage - 1) * itemsPerPage + idx + 1;
             return (
-              <div key={idx} className="bg-white rounded-xl border border-indigo-50 shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-indigo-100">
+              <div key={idx} className="bg-white rounded-xl border border-brand-navy/10 shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-brand-navy/10">
                 <div className="flex justify-between items-center pb-2 border-b border-slate-50">
                   <div className="flex items-center gap-2">
                     <span className="w-5 h-5 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[10px] font-black text-slate-500">
@@ -251,7 +251,7 @@ export default function MyMonySaves() {
                     </span>
                     <span className="text-xs font-bold text-gray-900 uppercase truncate max-w-[150px]">{item.month} {item.year}</span>
                   </div>
-                  <span className="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded text-[8px] font-black uppercase">
+                  <span className="bg-brand-navy/10 text-brand-navy px-2 py-0.5 rounded text-[8px] font-black uppercase">
                     ROI: {item.roi}%
                   </span>
                 </div>
@@ -263,14 +263,14 @@ export default function MyMonySaves() {
                   </div>
                   <div>
                     <span className="text-gray-400 block uppercase text-[8px] tracking-tight">After Solar</span>
-                    <span className="text-emerald-600 font-bold">₹{item.after.toLocaleString()}</span>
+                    <span className="text-brand-orange font-bold">₹{item.after.toLocaleString()}</span>
                   </div>
                 </div>
 
                 <div className="flex justify-between items-center border-t border-slate-100 pt-2 text-[11px]">
                   <span className="text-gray-400 uppercase text-[8px]">Savings (Monthly / Cum)</span>
                   <span className="text-gray-700 font-medium">
-                    <span className="text-emerald-600 font-bold">₹{item.monthlySavings.toLocaleString()}</span> / <span className="text-indigo-600 font-bold">₹{item.cumulativeSavings.toLocaleString()}</span>
+                    <span className="text-brand-orange font-bold">₹{item.monthlySavings.toLocaleString()}</span> / <span className="text-brand-navy font-bold">₹{item.cumulativeSavings.toLocaleString()}</span>
                   </span>
                 </div>
               </div>

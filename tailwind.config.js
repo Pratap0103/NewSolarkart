@@ -3,6 +3,11 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      colors: {
+        'brand-navy': '#30329A',
+        'brand-orange': '#F89B22',
+        'brand-white': '#FFFFFF',
+      },
       spacing: {
         '1': '0.2rem',
         '2': '0.4rem',

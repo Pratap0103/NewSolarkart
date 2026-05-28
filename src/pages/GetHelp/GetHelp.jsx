@@ -102,9 +102,9 @@ export default function GetHelp() {
 
   const getPriorityColor = (priority) => {
     switch (priority) {
-      case 'High': return 'text-rose-600 bg-rose-50';
-      case 'Medium': return 'text-amber-600 bg-amber-50';
-      case 'Low': return 'text-emerald-600 bg-emerald-50';
+      case 'High': return 'text-brand-navy bg-brand-navy/10';
+      case 'Medium': return 'text-brand-orange bg-brand-orange/10';
+      case 'Low': return 'text-brand-orange bg-brand-orange/10';
       default: return 'text-slate-600 bg-slate-50';
     }
   };
@@ -119,14 +119,14 @@ export default function GetHelp() {
         <div className="flex gap-6 shrink-0 w-auto items-center px-1">
           <button
             onClick={() => { setActiveTab('Pending'); handleClearFilters(); }}
-            className={`flex items-center gap-1.5 text-sm font-bold transition-all whitespace-nowrap ${activeTab === 'Pending' ? 'text-indigo-600' : 'text-slate-500 hover:text-slate-700'}`}
+            className={`flex items-center gap-1.5 text-sm font-bold transition-all whitespace-nowrap ${activeTab === 'Pending' ? 'text-brand-navy' : 'text-slate-500 hover:text-slate-700'}`}
           >
             <Clock size={16} />
             Pending Tickets
           </button>
           <button
             onClick={() => { setActiveTab('History'); handleClearFilters(); }}
-            className={`flex items-center gap-1.5 text-sm font-bold transition-all whitespace-nowrap ${activeTab === 'History' ? 'text-indigo-600' : 'text-slate-500 hover:text-slate-700'}`}
+            className={`flex items-center gap-1.5 text-sm font-bold transition-all whitespace-nowrap ${activeTab === 'History' ? 'text-brand-navy' : 'text-slate-500 hover:text-slate-700'}`}
           >
             <CheckCircle size={16} />
             Ticket History
@@ -145,12 +145,12 @@ export default function GetHelp() {
                 placeholder="Search tickets by ID, title..."
                 value={filters.searchQuery}
                 onChange={(e) => setFilters({ ...filters, searchQuery: e.target.value })}
-                className="w-full bg-white border border-gray-300 rounded-lg pl-8 pr-2 py-1.5 focus:outline-none focus:border-indigo-500 text-xs md:text-sm h-[32px] md:h-[38px]"
+                className="w-full bg-white border border-gray-300 rounded-lg pl-8 pr-2 py-1.5 focus:outline-none focus:border-brand-navy/80 text-xs md:text-sm h-[32px] md:h-[38px]"
               />
             </div>
             <button
                onClick={() => setShowMobileFilters(!showMobileFilters)}
-               className={`hidden flex items-center justify-center rounded-lg shadow-sm h-[32px] w-[32px] flex-shrink-0 transition ${showMobileFilters ? 'bg-indigo-100 text-indigo-700 border-indigo-200' : 'bg-white border border-gray-300 text-gray-600 hover:bg-gray-50'}`}
+               className={`hidden flex items-center justify-center rounded-lg shadow-sm h-[32px] w-[32px] flex-shrink-0 transition ${showMobileFilters ? 'bg-brand-navy/10 text-brand-navy border-brand-navy/30' : 'bg-white border border-gray-300 text-gray-600 hover:bg-gray-50'}`}
             >
               <Filter size={14} />
             </button>
@@ -181,7 +181,7 @@ export default function GetHelp() {
           {/* New Ticket Button */}
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="flex bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-sm font-bold shadow-md shadow-indigo-200 transition-all active:scale-95 items-center justify-center gap-2 whitespace-nowrap h-[32px] md:h-[38px] shrink-0"
+            className="flex bg-brand-navy hover:bg-brand-navy text-white px-4 py-2 rounded-xl text-sm font-bold shadow-md shadow-indigo-200 transition-all active:scale-95 items-center justify-center gap-2 whitespace-nowrap h-[32px] md:h-[38px] shrink-0"
           >
             <MessageCircle size={16} />
             Raise New Ticket
@@ -197,8 +197,8 @@ export default function GetHelp() {
             data={filteredData}
             minWidth="1200px"
             renderRow={(item, idx) => (
-              <tr key={item.id} className="hover:bg-indigo-50/30 transition-colors border-b border-gray-100">
-                <td className="px-4 py-3 text-center text-xs text-indigo-600 font-bold whitespace-nowrap">{item.id}</td>
+              <tr key={item.id} className="hover:bg-brand-navy/30 transition-colors border-b border-gray-100">
+                <td className="px-4 py-3 text-center text-xs text-brand-navy font-bold whitespace-nowrap">{item.id}</td>
                 <td className="px-4 py-3 text-left text-xs text-gray-900 font-bold max-w-[200px] truncate">{item.title}</td>
                 <td className="px-4 py-3 text-center text-xs text-gray-600 whitespace-nowrap">{item.category}</td>
                 <td className="px-4 py-3 text-center text-xs whitespace-nowrap">
@@ -207,26 +207,26 @@ export default function GetHelp() {
                 <td className="px-4 py-3 text-center text-xs text-gray-600 font-medium whitespace-nowrap">{item.created}</td>
                 <td className="px-4 py-3 text-center text-xs text-gray-600 font-medium whitespace-nowrap">{item.prefVisit}</td>
                 <td className="px-4 py-3 text-center text-xs text-gray-600 whitespace-nowrap">{item.prefTime}</td>
-                <td className="px-4 py-3 text-center text-xs text-indigo-600 font-bold whitespace-nowrap">{item.status}</td>
+                <td className="px-4 py-3 text-center text-xs text-brand-navy font-bold whitespace-nowrap">{item.status}</td>
                 <td className="px-4 py-3 text-center text-xs text-gray-600 whitespace-nowrap">{item.engineer}</td>
                 <td className="px-4 py-3 text-center whitespace-nowrap">
-                  <button className="p-1.5 bg-indigo-50 text-indigo-600 hover:bg-indigo-600 hover:text-white rounded-lg transition-colors">
+                  <button className="p-1.5 bg-brand-navy/10 text-brand-navy hover:bg-brand-navy hover:text-white rounded-lg transition-colors">
                     <Eye size={14} />
                   </button>
                 </td>
               </tr>
             )}
             renderCard={(item, idx) => (
-              <div key={item.id} className="bg-white rounded-xl border border-indigo-50 shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-indigo-100">
+              <div key={item.id} className="bg-white rounded-xl border border-brand-navy/10 shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-brand-navy/10">
                 <div className="flex justify-between items-center pb-2 border-b border-slate-50">
-                  <span className="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded text-[10px] font-black uppercase">{item.id}</span>
+                  <span className="bg-brand-navy/10 text-brand-navy px-2 py-0.5 rounded text-[10px] font-black uppercase">{item.id}</span>
                   <span className={`px-2 py-0.5 rounded-md font-black uppercase text-[9px] tracking-wider ${getPriorityColor(item.priority)}`}>{item.priority}</span>
                 </div>
                 <div className="font-bold text-gray-900 text-sm leading-tight">{item.title}</div>
                 <div className="grid grid-cols-2 gap-2 text-[11px] bg-slate-50 rounded-lg p-2 border border-slate-100/50">
                   <div>
                     <span className="text-gray-400 block uppercase text-[8px] tracking-tight">Status</span>
-                    <span className="text-indigo-600 font-bold">{item.status}</span>
+                    <span className="text-brand-navy font-bold">{item.status}</span>
                   </div>
                   <div>
                     <span className="text-gray-400 block uppercase text-[8px] tracking-tight">Engineer</span>
@@ -250,8 +250,8 @@ export default function GetHelp() {
             data={filteredData}
             minWidth="1200px"
             renderRow={(item, idx) => (
-              <tr key={item.id} className="hover:bg-indigo-50/30 transition-colors border-b border-gray-100">
-                <td className="px-4 py-3 text-center text-xs text-indigo-600 font-bold whitespace-nowrap">{item.id}</td>
+              <tr key={item.id} className="hover:bg-brand-navy/30 transition-colors border-b border-gray-100">
+                <td className="px-4 py-3 text-center text-xs text-brand-navy font-bold whitespace-nowrap">{item.id}</td>
                 <td className="px-4 py-3 text-left text-xs text-gray-900 font-bold max-w-[200px] truncate">{item.title}</td>
                 <td className="px-4 py-3 text-center text-xs text-gray-600 whitespace-nowrap">{item.category}</td>
                 <td className="px-4 py-3 text-center text-xs whitespace-nowrap">
@@ -261,20 +261,20 @@ export default function GetHelp() {
                 <td className="px-4 py-3 text-center text-xs text-gray-600 font-medium whitespace-nowrap">{item.created}</td>
                 <td className="px-4 py-3 text-center text-xs text-gray-600 font-medium whitespace-nowrap">{item.resolved}</td>
                 <td className="px-4 py-3 text-center text-xs text-gray-600 font-medium whitespace-nowrap">{item.closed}</td>
-                <td className="px-4 py-3 text-center text-xs text-emerald-600 font-bold whitespace-nowrap">{item.finalStatus}</td>
-                <td className="px-4 py-3 text-center text-xs text-amber-500 font-black whitespace-nowrap">{item.rating}</td>
+                <td className="px-4 py-3 text-center text-xs text-brand-orange font-bold whitespace-nowrap">{item.finalStatus}</td>
+                <td className="px-4 py-3 text-center text-xs text-brand-orange/80 font-black whitespace-nowrap">{item.rating}</td>
                 <td className="px-4 py-3 text-center whitespace-nowrap">
-                  <button className="p-1.5 bg-indigo-50 text-indigo-600 hover:bg-indigo-600 hover:text-white rounded-lg transition-colors">
+                  <button className="p-1.5 bg-brand-navy/10 text-brand-navy hover:bg-brand-navy hover:text-white rounded-lg transition-colors">
                     <Eye size={14} />
                   </button>
                 </td>
               </tr>
             )}
             renderCard={(item, idx) => (
-              <div key={item.id} className="bg-white rounded-xl border border-indigo-50 shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-indigo-100">
+              <div key={item.id} className="bg-white rounded-xl border border-brand-navy/10 shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-brand-navy/10">
                 <div className="flex justify-between items-center pb-2 border-b border-slate-50">
-                  <span className="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded text-[10px] font-black uppercase">{item.id}</span>
-                  <span className="text-emerald-600 font-black text-[10px] uppercase">{item.finalStatus}</span>
+                  <span className="bg-brand-navy/10 text-brand-navy px-2 py-0.5 rounded text-[10px] font-black uppercase">{item.id}</span>
+                  <span className="text-brand-orange font-black text-[10px] uppercase">{item.finalStatus}</span>
                 </div>
                 <div className="font-bold text-gray-900 text-sm leading-tight">{item.title}</div>
                 <div className="grid grid-cols-2 gap-2 text-[11px] bg-slate-50 rounded-lg p-2 border border-slate-100/50">
@@ -284,7 +284,7 @@ export default function GetHelp() {
                   </div>
                   <div>
                     <span className="text-gray-400 block uppercase text-[8px] tracking-tight">Rating</span>
-                    <span className="text-amber-500 font-black">{item.rating}</span>
+                    <span className="text-brand-orange/80 font-black">{item.rating}</span>
                   </div>
                   <div>
                     <span className="text-gray-400 block uppercase text-[8px] tracking-tight">Created</span>
@@ -307,10 +307,10 @@ export default function GetHelp() {
           <div className="bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden animate-in zoom-in-95 duration-200">
             <div className="flex justify-between items-center p-5 border-b border-slate-100 bg-slate-50/50">
               <h2 className="text-lg font-black text-slate-800 flex items-center gap-2">
-                <LifeBuoy className="text-indigo-600" size={20} />
+                <LifeBuoy className="text-brand-navy" size={20} />
                 Raise New Ticket
               </h2>
-              <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-rose-500 transition-colors">
+              <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-brand-navy/80 transition-colors">
                 ✕
               </button>
             </div>
@@ -323,7 +323,7 @@ export default function GetHelp() {
                   type="text" 
                   value={newTicket.title}
                   onChange={e => setNewTicket({...newTicket, title: e.target.value})}
-                  className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" 
+                  className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-navy/80 focus:ring-1 focus:ring-brand-navy/80" 
                   placeholder="E.g. Inverter not turning on"
                 />
               </div>
@@ -334,7 +334,7 @@ export default function GetHelp() {
                   <select 
                     value={newTicket.category}
                     onChange={e => setNewTicket({...newTicket, category: e.target.value})}
-                    className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500 bg-white"
+                    className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-navy/80 bg-white"
                   >
                     <option>Hardware</option>
                     <option>Software</option>
@@ -346,7 +346,7 @@ export default function GetHelp() {
                   <select 
                     value={newTicket.priority}
                     onChange={e => setNewTicket({...newTicket, priority: e.target.value})}
-                    className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500 bg-white"
+                    className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-navy/80 bg-white"
                   >
                     <option>Low</option>
                     <option>Medium</option>
@@ -362,7 +362,7 @@ export default function GetHelp() {
                     type="date" 
                     value={newTicket.prefVisit}
                     onChange={e => setNewTicket({...newTicket, prefVisit: e.target.value})}
-                    className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500" 
+                    className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-navy/80" 
                   />
                 </div>
                 <div>
@@ -370,7 +370,7 @@ export default function GetHelp() {
                   <select 
                     value={newTicket.prefTime}
                     onChange={e => setNewTicket({...newTicket, prefTime: e.target.value})}
-                    className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500 bg-white"
+                    className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-navy/80 bg-white"
                   >
                     <option>Anytime</option>
                     <option>Morning (9AM-12PM)</option>
@@ -386,7 +386,7 @@ export default function GetHelp() {
                   rows="3"
                   value={newTicket.description}
                   onChange={e => setNewTicket({...newTicket, description: e.target.value})}
-                  className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-indigo-500 resize-none"
+                  className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-navy/80 resize-none"
                   placeholder="Please describe the issue in detail..."
                 ></textarea>
               </div>
@@ -395,7 +395,7 @@ export default function GetHelp() {
                 <button type="button" onClick={() => setIsModalOpen(false)} className="px-4 py-2 text-sm font-bold text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded-xl transition-colors">
                   Cancel
                 </button>
-                <button type="submit" className="px-4 py-2 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-md shadow-indigo-200 transition-all active:scale-95 flex items-center gap-2">
+                <button type="submit" className="px-4 py-2 text-sm font-bold text-white bg-brand-navy hover:bg-brand-navy rounded-xl shadow-md shadow-indigo-200 transition-all active:scale-95 flex items-center gap-2">
                   <CheckCircle size={16} />
                   Submit Ticket
                 </button>

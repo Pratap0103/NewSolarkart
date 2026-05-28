@@ -67,8 +67,8 @@ export default function NotificationsPage() {
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-2 lg:gap-4 w-full px-2 sm:px-0">
         <div className="flex items-center gap-4">
           <div className="relative">
-            <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center">
-              <Bell size={20} className="text-indigo-600" />
+            <div className="w-10 h-10 rounded-xl bg-brand-navy/10 border border-brand-navy/10 flex items-center justify-center">
+              <Bell size={20} className="text-brand-navy" />
             </div>
             {unreadCount > 0 && (
               <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-red-500 rounded-full border-2 border-white flex items-center justify-center text-white text-[10px] font-bold shadow-sm">
@@ -90,14 +90,14 @@ export default function NotificationsPage() {
                 placeholder="Search notifications..."
                 value={searchQuery}
                 onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
-                className="w-full bg-white border border-gray-300 rounded-lg pl-8 pr-2 py-1.5 focus:outline-none focus:border-indigo-500 text-xs md:text-sm h-[32px] md:h-[38px]"
+                className="w-full bg-white border border-gray-300 rounded-lg pl-8 pr-2 py-1.5 focus:outline-none focus:border-brand-navy/80 text-xs md:text-sm h-[32px] md:h-[38px]"
               />
             </div>
           </div>
           {unreadCount > 0 && (
             <button 
               onClick={handleMarkAllRead}
-              className="w-full lg:w-auto px-4 h-[32px] md:h-[38px] bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-lg text-xs md:text-sm font-bold transition-colors whitespace-nowrap border border-indigo-100"
+              className="w-full lg:w-auto px-4 h-[32px] md:h-[38px] bg-brand-navy/10 hover:bg-brand-navy/10 text-brand-navy rounded-lg text-xs md:text-sm font-bold transition-colors whitespace-nowrap border border-brand-navy/10"
             >
               Mark All Read
             </button>
@@ -119,14 +119,14 @@ export default function NotificationsPage() {
           totalResults={filteredNotifs.length}
           itemsPerPageOptions={[50, 100, 200]}
           renderRow={(notif, idx) => (
-            <tr key={idx} className={`hover:bg-indigo-50/30 transition-colors border-b border-gray-100 ${notif.status === 'Unread' ? 'bg-indigo-50/20' : ''}`}>
+            <tr key={idx} className={`hover:bg-brand-navy/30 transition-colors border-b border-gray-100 ${notif.status === 'Unread' ? 'bg-brand-navy/20' : ''}`}>
               <td className="px-4 py-3 text-sm font-bold text-gray-900 text-center whitespace-nowrap">{notif.notificationId}</td>
               <td className="px-4 py-3 text-sm text-center">
                 <span className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
                   notif.type === 'System Alert' ? 'bg-red-50 text-red-600' : 
-                  notif.type === 'Maintenance' ? 'bg-amber-50 text-amber-600' :
-                  notif.type === 'Billing' ? 'bg-indigo-50 text-indigo-600' :
-                  'bg-emerald-50 text-emerald-600'
+                  notif.type === 'Maintenance' ? 'bg-brand-orange/10 text-brand-orange' :
+                  notif.type === 'Billing' ? 'bg-brand-navy/10 text-brand-navy' :
+                  'bg-brand-orange/10 text-brand-orange'
                 }`}>
                   {notif.type}
                 </span>
@@ -137,18 +137,18 @@ export default function NotificationsPage() {
               <td className="px-4 py-3 text-sm text-gray-500 text-center whitespace-nowrap">{notif.date}</td>
               <td className="px-4 py-3 text-center">
                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold ${
-                  notif.status === 'Unread' ? 'bg-indigo-100 text-indigo-800' : 'bg-gray-100 text-gray-600'
+                  notif.status === 'Unread' ? 'bg-brand-navy/10 text-brand-navy' : 'bg-gray-100 text-gray-600'
                 }`}>
                   {notif.status}
                 </span>
               </td>
               <td className="px-4 py-3 text-center">
                 <div className="flex justify-center gap-2">
-                  <button onClick={() => handleOpenDetail(notif)} className="p-1.5 bg-gray-50 hover:bg-indigo-50 text-gray-600 hover:text-indigo-600 rounded-lg transition-colors border border-gray-200" title="View Details">
+                  <button onClick={() => handleOpenDetail(notif)} className="p-1.5 bg-gray-50 hover:bg-brand-navy/10 text-gray-600 hover:text-brand-navy rounded-lg transition-colors border border-gray-200" title="View Details">
                     <Eye size={14} />
                   </button>
                   {notif.status === 'Unread' && (
-                    <button onClick={() => handleMarkRead(notif.notificationId)} className="p-1.5 bg-gray-50 hover:bg-emerald-50 text-gray-600 hover:text-emerald-600 rounded-lg transition-colors border border-gray-200" title="Mark as Read">
+                    <button onClick={() => handleMarkRead(notif.notificationId)} className="p-1.5 bg-gray-50 hover:bg-brand-orange/10 text-gray-600 hover:text-brand-orange rounded-lg transition-colors border border-gray-200" title="Mark as Read">
                       <Check size={14} />
                     </button>
                   )}
@@ -162,7 +162,7 @@ export default function NotificationsPage() {
           renderCard={(notif, idx) => {
             const globalIdx = (currentPage - 1) * itemsPerPage + idx + 1;
             return (
-              <div key={idx} className={`bg-white rounded-xl border ${notif.status === 'Unread' ? 'border-indigo-200' : 'border-indigo-50'} shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-indigo-100`}>
+              <div key={idx} className={`bg-white rounded-xl border ${notif.status === 'Unread' ? 'border-brand-navy/30' : 'border-brand-navy/10'} shadow-sm p-4 space-y-3 transition-all hover:shadow-md hover:border-brand-navy/10`}>
                 <div className="flex justify-between items-center pb-2 border-b border-slate-50">
                   <div className="flex items-center gap-2">
                     <span className="w-5 h-5 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[10px] font-black text-slate-500">
@@ -170,15 +170,15 @@ export default function NotificationsPage() {
                     </span>
                     <span className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
                       notif.type === 'System Alert' ? 'bg-red-50 text-red-600' : 
-                      notif.type === 'Maintenance' ? 'bg-amber-50 text-amber-600' :
-                      notif.type === 'Billing' ? 'bg-indigo-50 text-indigo-600' :
-                      'bg-emerald-50 text-emerald-600'
+                      notif.type === 'Maintenance' ? 'bg-brand-orange/10 text-brand-orange' :
+                      notif.type === 'Billing' ? 'bg-brand-navy/10 text-brand-navy' :
+                      'bg-brand-orange/10 text-brand-orange'
                     }`}>
                       {notif.type}
                     </span>
                   </div>
                   <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                    notif.status === 'Unread' ? 'bg-indigo-100 text-indigo-800' : 'bg-gray-100 text-gray-600'
+                    notif.status === 'Unread' ? 'bg-brand-navy/10 text-brand-navy' : 'bg-gray-100 text-gray-600'
                   }`}>
                     {notif.status}
                   </span>
@@ -188,7 +188,7 @@ export default function NotificationsPage() {
                 </p>
                 <div className="text-xs text-gray-400 font-semibold">{notif.date}</div>
                 <div className="flex gap-2 pt-2 border-t border-slate-100 mt-1">
-                  <button onClick={() => handleOpenDetail(notif)} className="flex-1 flex justify-center items-center gap-1.5 py-1.5 bg-indigo-50 text-indigo-700 rounded-lg text-xs font-bold">
+                  <button onClick={() => handleOpenDetail(notif)} className="flex-1 flex justify-center items-center gap-1.5 py-1.5 bg-brand-navy/10 text-brand-navy rounded-lg text-xs font-bold">
                     <Eye size={12} /> View
                   </button>
                   <button onClick={() => handleDelete(notif.notificationId)} className="flex-[0.3] flex justify-center items-center gap-1.5 py-1.5 bg-red-50 text-red-700 rounded-lg text-xs font-bold">
@@ -207,7 +207,7 @@ export default function NotificationsPage() {
           <div className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-200">
             <div className="flex justify-between items-center p-4 md:p-5 border-b border-gray-100 bg-gray-50/50">
               <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                <ShieldAlert className={selectedNotif.type === 'System Alert' ? 'text-red-500' : 'text-indigo-500'} /> Alert Details
+                <ShieldAlert className={selectedNotif.type === 'System Alert' ? 'text-red-500' : 'text-brand-navy/80'} /> Alert Details
               </h3>
               <button onClick={() => setShowDetail(false)} className="text-gray-400 hover:text-gray-600 p-1">
                 ✕
@@ -245,7 +245,7 @@ export default function NotificationsPage() {
                 <button onClick={() => handleDelete(selectedNotif.notificationId)} className="flex-1 px-4 py-2 bg-red-50 hover:bg-red-100 text-red-700 rounded-xl text-sm font-bold transition-colors flex justify-center items-center gap-2">
                   <Trash2 size={16} /> Delete Alert
                 </button>
-                <button onClick={() => setShowDetail(false)} className="flex-1 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-bold shadow-md shadow-indigo-200 transition-all flex justify-center items-center gap-2">
+                <button onClick={() => setShowDetail(false)} className="flex-1 px-4 py-2 bg-brand-navy hover:bg-brand-navy text-white rounded-xl text-sm font-bold shadow-md shadow-indigo-200 transition-all flex justify-center items-center gap-2">
                   Dismiss
                 </button>
               </div>
