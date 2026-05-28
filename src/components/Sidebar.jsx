@@ -100,7 +100,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           {/* Logo Section */}
           <div className="p-4 border-b border-brand-navy/10 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <img src="/src/Assets/Logo.png" alt="SolarKart" className="h-10 w-auto object-contain" />
+              <img src="/Logo.png" alt="SolarKart" className="h-10 w-auto object-contain" />
             </div>
             <button onClick={onClose} className="lg:hidden p-2 hover:bg-brand-navy/50 rounded-lg">
               <X size={20} className="text-brand-navy" />

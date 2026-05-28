@@ -62,7 +62,7 @@ const Login = () => {
           
           {/* Logo Section */}
           <div className="flex flex-col items-center space-y-4">
-            <img src="/src/Assets/Logo.png" alt="SolarKart" className="h-28 w-auto object-contain" />
+            <img src="/Logo.png" alt="SolarKart" className="h-28 w-auto object-contain" />
           </div>
 
           {/* Form */}
